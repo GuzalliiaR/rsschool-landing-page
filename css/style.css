@@ -250,8 +250,11 @@ svg * {
 
 :root {
     --color-bg: #FFFFFF;
+    --color-gray-bg: #F0F0F0;
+    --color-text-btn: #FFFFFF;
     --color-text-dark: #000000;
     --color-h1: #121212;
+    --color-btn: #121212;
     --color-header-nav: #545454;
     --color-header-nav-highlight: #2E2E2E;
     --color-light-pink: #FFF6FD;
@@ -261,7 +264,7 @@ svg * {
     --font-familly-logo1: 'Playfair Display', sans-serif;
     --font-familly-logo2: 'Montserrat', sans-serif;
 
-    --container-width: 1290px;
+    --container-width: 1280px;
     --container-padding-x: 5px;
 
     --transition-duration: 0.2s;
@@ -275,6 +278,7 @@ body {
     font-weight: 400;
     font-size: 27px;
     line-height: 1.5em;
+    letter-spacing: -0.01em;
     color: var(--color-text-dark);
     background-color: var(--color-bg);
 }
@@ -285,6 +289,28 @@ h1 {
     letter-spacing: -0.06em;
     line-height: 1em;
     color: var(--color-h1);
+}
+
+h2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 1em;
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 1em;
+}
+
+h4 {
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 1.2em;
 }
 
 a,
@@ -313,6 +339,7 @@ a {
 }
 
 header {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -327,9 +354,23 @@ nav li a {
     padding: 5px;
 }
 
+main {
+    max-width: var(--container-width);
+    margin-inline: auto;
+}
+
+section {
+    width: 100%;
+    margin-bottom: 100px;
+}
+
 
 
 /* 5. Компоненты (Components) ← кнопки, карточки, формы, навигация  */
+button {
+    border-radius: 5px;
+}
+
 .logo__title {
     margin-left: -6px;
 }
@@ -366,6 +407,113 @@ nav li a {
     background-color: var(--color-bg);
 }
 
+.hero-section {
+    position: relative;
+    height: 523px;
+    background-color: var(--color-light-pink);
+    border-radius: 20px;
+}
+
+.hero-section__info {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    max-width: 587px;
+    margin-left: 60px;
+}
+
+.hero-section__title {
+    margin-bottom: 13px;
+}
+
+.hero-section__title_line-top {
+    align-self: flex-start;
+}
+
+.hero-section__title_line-bottom {
+    align-self: flex-end;
+}
+
+.hero-section__text {
+    width: 100%;
+    margin-bottom: 40px;
+    font-size: 30px;
+    line-height: 1.2em;
+}
+
+.hero-section__goCatalog {
+    display: inline-flex;
+    align-items: center;
+    padding: 10.5px 21.5px ;
+    border-radius: 72px;
+    border: 1px solid var(--color-btn);
+
+    background-color: var(--color-btn);
+    color: var(--color-text-btn);
+    font-size: 32px;
+    line-height: 1.2em;
+}
+
+.hero-section__goCatalog::after {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    aspect-ratio: 1;
+    margin-left: 5.5px;
+
+    background-image: url('../icon/arrow-right.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-section__goCatalog:hover {
+    background-color: var(--color-gray);
+    color: var(--color-btn);
+}
+
+.hero-section__goCatalog:hover::after {
+    background-color: var(--color-btn);
+    border-radius: 50%;
+}
+
+.hero-section__logo,
+.hero-section__imgProduct {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-bottom-right-radius: 20px;
+}
+
+.hero-section__logo {
+    z-index: 0;
+}
+
+.hero-section__imgProduct {
+    z-index: 10;
+}
+
+.advantages-section {
+    height: 628px;
+    padding: 50px 40px;
+    background-color: var(--color-gray-bg);
+}
+
+.advantages-section__title {
+    margin-bottom: 50px;
+}
+
+.advantages-section__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    column-gap: 24px;
+}
+
+.advantages-section__subtitle {
+    margin-bottom: 10px;
+}
 
 
 /* 6. Утилиты (Utilities) ← .visually-hidden, .text-center, .mt-2  */
