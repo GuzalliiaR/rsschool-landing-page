@@ -585,6 +585,8 @@ section {
 
 .radiant-skin-section {
     display: flex;
+    justify-content: center;
+    align-items: center;
     column-gap: 50px;
 
     background-color: var(--color-gray-bg);
@@ -639,6 +641,11 @@ section {
 .radiant-skin__goArticles:hover::after {
     border-radius: 50%;
     background-color: var(--color-bg);
+}
+
+.radiant-skin__img {
+    width: 550px;
+    height: auto;
 }
 
 
@@ -749,6 +756,27 @@ section {
         width: 40px;
         aspect-ratio: 1;
     }
+
+    .radiant-skin-section {
+        column-gap: 30px;
+    }
+    
+    .radiant-skin__info {
+        margin-block: 50px;
+        margin-left: 25px;
+    }
+
+    .radiant-skin__title {
+        margin-bottom: 30px;
+    }
+
+    .radiant-skin-section article {
+        margin-bottom: 30px;
+    }
+
+    .radiant-skin__img {
+        width: 400px;
+    }
 }
 
 @media(max-width: 860px) {
@@ -804,6 +832,28 @@ section {
     .reviews-section {
         padding: 40px 30px;
     }
+
+    .radiant-skin-section {
+        flex-direction: column;
+        row-gap: 28px;
+        padding: 40px 30px;
+    }
+
+    .radiant-skin__info {
+        margin: 0;
+    }
+
+    .radiant-skin__title {
+        margin-bottom: 34px;
+    }
+
+    .radiant-skin-section article {
+        margin-bottom: 34px;
+    }
+
+        .radiant-skin__img {
+            width: 340px;
+        }
 }
 
 @media(max-width: 600px) {
@@ -830,6 +880,10 @@ section {
     
     h4 {
         font-size: 20px;
+    }
+
+    article p:not(:last-child) {
+        margin-bottom: 6px;
     }
 
     .container {
@@ -896,4 +950,33 @@ section {
     .reviews-section__slideSubtitle {
         margin-bottom: 10px;
     }
+
+    .radiant-skin-section {
+        padding: 30px 9px;
+    }
+
+    .radiant-skin__title {
+        font-size: 27px;
+    }
+
+    .radiant-skin__subtitle {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .radiant-skin__goArticles {
+        padding: 6px 12px;
+        font-size: 18px;
+    }
+
+    .radiant-skin__goArticles::after {
+        margin-left: 4px;
+    }
+        .radiant-skin__goArticles::after {
+            width: 20px;
+            aspect-ratio: 1;
+            margin-left: 4px;
+    
+            background-image: url(../icon/arrow-right-light-smoll.svg);
+        }
 }
