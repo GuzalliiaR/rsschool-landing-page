@@ -251,6 +251,7 @@ svg * {
 :root {
     --color-bg: #FFFFFF;
     --color-gray-bg: #F0F0F0;
+    --color-gray-btn: #CFCFCF;
     --color-text-btn: #FFFFFF;
     --color-text-dark: #000000;
     --color-h1: #121212;
@@ -327,6 +328,9 @@ button {
     border-radius: 5px;
 }
 
+article p:not(:last-child) {
+    margin-bottom: 10px;
+}
 
 
 /* 4. Layout ← крупные блоки: container, grid, header, footer  */
@@ -450,7 +454,7 @@ section {
 .hero-section__goCatalog {
     display: inline-flex;
     align-items: center;
-    padding: 10.5px 21.5px ;
+    padding: 11px 21px ;
     border-radius: 72px;
     border: 1px solid var(--color-btn);
 
@@ -579,7 +583,63 @@ section {
     transform: rotate(180deg);
 }
 
+.radiant-skin-section {
+    display: flex;
+    column-gap: 50px;
 
+    background-color: var(--color-gray-bg);
+}
+
+.radiant-skin__info {
+    margin-block: 65px;
+    margin-left: 28px;
+}
+
+.radiant-skin__title {
+    margin-bottom: 60px;
+}
+
+.radiant-skin__subtitle {
+    margin-bottom: 10px;
+}
+
+.radiant-skin-section article {
+    margin-bottom: 60px;
+}
+
+.radiant-skin__goArticles {
+    display: inline-flex;
+    align-items: center;
+    padding: 11px 21px;
+    border-radius: 72px;
+    border: 1px solid var(--color-gray-btn);
+
+    background-color: var(--color-bg);
+    font-size: 32px;
+    line-height: 1.2em;
+}
+
+.radiant-skin__goArticles::after {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    aspect-ratio: 1;
+    margin-left: 5.5px;
+
+    background-image: url(../icon/arrow-right-light.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.radiant-skin__goArticles:hover {
+    background-color: var(--color-btn);
+    color: var(--color-text-btn);
+}
+
+.radiant-skin__goArticles:hover::after {
+    border-radius: 50%;
+    background-color: var(--color-bg);
+}
 
 
 /* 6. Утилиты (Utilities) ← .visually-hidden, .text-center, .mt-2  */
