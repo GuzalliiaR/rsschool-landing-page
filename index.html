@@ -14,7 +14,7 @@
                 href="https://guzalliiar.github.io/rsschool-landing-page/" 
                 target="_self"
             >
-                <img src="./icon/logo.svg" alt="Logo" loading="lazy" width="54" height="58">
+                <img class="logo__img" src="./icon/logo.svg" alt="Logo" loading="lazy" width="54" height="58">
                 <h1 class="logo__title">
                     <span class="logo__title_font1">trag</span><span class="logo__title_font2">leam</span>
                 </h1>
@@ -41,19 +41,23 @@
             </nav>
 
             <div class="header__actions">
-                <button type="button">
+                <button class="burger" title="Open menu" type="button">
+                    <img src="./icon/category.svg" alt="Open menu" width="40" height="40">
+                </button>
+
+                <button class="btnSun" title="Light theme" type="button">
                     <img src="./icon/sun.svg" alt="light theme" width="50" height="50">
                 </button>
 
-                <button class="visually-hidden" type="button">
+                <button class="btnMoon visually-hidden" title="Dark theme" type="button">
                     <img src="./icon/moon.svg" alt="dark theme" width="50" height="50">
                 </button>
 
-                <a href="#">
+                <a class="btnBag" href="#">
                     <img src="./icon/bag.svg" alt="Bag" width="50" height="50">
                 </a>
 
-                <a href="#">
+                <a class="btnProfile" href="#">
                     <img src="./icon/profile.svg" alt="Profile" width="50" height="50">
                 </a>
             </div>
