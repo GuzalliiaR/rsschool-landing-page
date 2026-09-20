@@ -520,6 +520,52 @@ section {
     margin-bottom: 10px;
 }
 
+.reviews-section {
+    padding: 50px 25px;
+    background-color: var(--color-gray-bg);
+}
+
+.reviews-section__title {
+    margin-bottom: 50px;
+}
+
+.reviews-section__viewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+.reviews-section__slider {
+    display: flex;
+    align-items: start;
+    flex-wrap: nowrap;
+    column-gap: 15px;
+}
+
+.reviews-section__slide {
+    width: 450px;
+    /* height: 570px; */
+    flex-shrink: 0;    /*Запрет на уменьшение элемента внутри flex-контейнера */
+    padding: 37px 20px;
+    border-radius: 19px;
+
+    background-color: var(--color-bg);
+}
+
+.reviews-section__slideIMG {
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.reviews-section__slideSubtitle {
+    margin-bottom: 14px;
+}
+
+.reviews-section__nameAutor {
+    font-weight: 500;
+}
+
+
+
 
 /* 6. Утилиты (Utilities) ← .visually-hidden, .text-center, .mt-2  */
 .visually-hidden {
