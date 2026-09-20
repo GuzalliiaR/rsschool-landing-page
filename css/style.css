@@ -531,6 +531,8 @@ section {
 
 .reviews-section__viewport {
     overflow: hidden;
+    margin-bottom: 10px;
+
     width: 100%;
 }
 
@@ -543,7 +545,6 @@ section {
 
 .reviews-section__slide {
     width: 450px;
-    /* height: 570px; */
     flex-shrink: 0;    /*Запрет на уменьшение элемента внутри flex-контейнера */
     padding: 37px 20px;
     border-radius: 19px;
@@ -562,6 +563,20 @@ section {
 
 .reviews-section__nameAutor {
     font-weight: 500;
+}
+
+.reviews-section__buttons {
+    display: flex;
+    justify-content: center;
+    column-gap: 15px;
+}
+
+.reviews-section__btn {
+    border: none;
+}
+
+.reviews-section__arrowSlider_toright {
+    transform: rotate(180deg);
 }
 
 
@@ -660,6 +675,20 @@ section {
         width: 420px;
         height: auto;
     }
+
+    .reviews-section__title {
+        margin-bottom: 30px;
+    }
+
+    .reviews-section__slide {
+        width: 417px;
+    }
+
+    .reviews-section__arrowSlider_toleft,
+    .reviews-section__arrowSlider_toright {
+        width: 40px;
+        aspect-ratio: 1;
+    }
 }
 
 @media(max-width: 860px) {
@@ -710,6 +739,10 @@ section {
     .advantages-section__img {
         width: 340px;
         height: auto;
+    }
+
+    .reviews-section {
+        padding: 40px 30px;
     }
 }
 
@@ -782,5 +815,25 @@ section {
     .advantages-section__title {
         margin-bottom: 24px;
     }
+
+    .reviews-section {
+        padding: 30px 15px;
+    }
+
+    .reviews-section__title {
+        margin-bottom: 24px;
+    }
     
+    .reviews-section__slide {
+        padding: 28px 15px;
+        width: 320px;
+    }
+
+    .reviews-section__slideIMG {
+        margin-bottom: 10px;
+    }
+
+    .reviews-section__slideSubtitle {
+        margin-bottom: 10px;
+    }
 }
