@@ -43,12 +43,9 @@
                     <img src="./icon/category.svg" alt="Open menu" loading="lazy" width="40" height="40">
                 </button>
     
-                <button class="btnSun" title="Light theme" type="button">
-                    <img src="./icon/sun.svg" alt="light theme" loading="lazy" width="50" height="50">
-                </button>
-    
-                <button class="btnMoon visually-hidden" title="Dark theme" type="button">
-                    <img src="./icon/moon.svg" alt="dark theme" loading="lazy" width="50" height="50">
+                <button class="btn-them" id="theme-toggle" title="Change theme" type="button" aria-pressed="false">
+                    <img class="theme-toggle__icon--light" src="./icon/sun.svg" alt="light theme" loading="lazy" width="50" height="50">
+                    <img class="theme-toggle__icon--dark" src="./icon/moon.svg" alt="dark theme" loading="lazy" width="50" height="50">
                 </button>
     
                 <a class="btnBag" href="#">
@@ -212,5 +209,7 @@
             </section>
         </div>
     </footer>
+
+    <script src="./main.js" defer></script>
 </body>
 </html>

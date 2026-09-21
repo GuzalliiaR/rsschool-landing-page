@@ -274,6 +274,11 @@ svg * {
     --transition-duration: 0.2s;
 }
 
+/* Теманая тема */
+[data-theme="dark"] {
+    --color-bg: #121212;
+}
+
 
 
 /* 3. База (Base) ← стили для голых тегов (body, h1, a, p)  */
@@ -427,12 +432,26 @@ footer section {
 }
 
 .header__actions button {
+    height: auto;
     border: none;
     padding: 0;
+    background-color: var(--color-bg);
 }
 
 .header__actions img {
     background-color: var(--color-bg);
+}
+
+.theme-toggle__icon--dark {
+    display: none;
+}
+
+[data-theme="dark"] .theme-toggle__icon--light {
+    display: none;
+}
+
+[data-theme="dark"] .theme-toggle__icon--dark {
+    display: inline;
 }
 
 .burger {
@@ -1006,7 +1025,7 @@ footer section {
         padding-block: 30px;
     }
 
-    .btnSun,
+    .btn-them,
     .btnMoon,
     .btnBag,
     .btnProfile {
