@@ -262,6 +262,7 @@ svg * {
     --color-gray: #EFEFEF;
     --color-footer-bg: #121212;
     --color-footer-text: #FFFFFF;
+    --color-cards: #E4E4E4;
 
     --font-familly: 'DM Sans', sans-serif;
     --font-familly-logo1: 'Playfair Display', sans-serif;
@@ -316,6 +317,10 @@ footer h3 {
     font-weight: 500;
     font-size: 26px;
     line-height: 1em;
+}
+
+.catalog-grid h4 {
+    font-size: 23px;
 }
 
 a,
@@ -708,7 +713,99 @@ footer section {
     column-gap: 8px;
 }
 
+.catalog__title {
+    margin-bottom: 50px;
+}
 
+.categories {
+    display: flex;
+    justify-content: center;
+    column-gap: 25px;
+    margin-bottom: 36px;
+}
+
+.category-btn {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid var(--color-gray);
+
+    background-color: var(--color-gray);
+}
+
+.category-btn:hover {
+    background-color: var(--color-bg);
+}
+
+.active {
+    font-weight: 500;
+    border: 2px solid var(--color-header-nav-highlight);
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 413px);
+    gap: 17px;
+    justify-content: center;
+
+    font-size: 25px;
+    margin-bottom: 36px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 415px;
+    aspect-ratio: 1;
+
+    border: 1px solid var(--color-cards);
+    border-radius: 10px;
+    background-color: var(--color-cards);
+}
+
+.card img {
+    margin: auto;
+}
+
+.card__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 100%;
+    height: 103px;
+    padding-inline: 20px;
+
+    background-color: var(--color-bg);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.moreCards-btn {
+    border: none;
+    padding: 10px 15px;
+    background-color: var(--color-bg);
+    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.moreCards-btn:hover {
+    font-weight: 500;
+}
+
+.moreCards-btn:hover::after {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 22.5px;
+    margin-left: 5.5px;
+
+    background-image: url('../icon/arrow-ShowMore.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 
 /* 6. Утилиты (Utilities) ← .visually-hidden, .text-center, .mt-2  */
 .visually-hidden {
@@ -743,6 +840,12 @@ footer section {
     }
 }
 
+@media(max-width: 1320px) {
+    .catalog-grid {
+        grid-template-columns: repeat(2, 413px);
+        gap: 30px;
+    }
+}
 
 @media(max-width: 1200px) {
     :root {
@@ -772,6 +875,10 @@ footer section {
 
     footer h3 {
         font-size: 20px;
+    }
+
+    .container {
+        margin-bottom: 70px;
     }
 
     .header__nav {
@@ -861,6 +968,24 @@ footer section {
         margin-bottom: 15px;
     }
 
+    .catalog__title {
+        margin-bottom: 30px;
+    }
+
+    .categories {
+        column-gap: 18px;
+        margin-bottom: 30px;
+    }
+
+    .catalog-grid {
+        gap: 24px;
+        margin-bottom: 20px;
+    }
+
+    .moreCards-btn {
+        font-size: 25px;
+    }
+
 }
 
 @media(max-width: 860px) {
@@ -947,6 +1072,16 @@ footer section {
     .container-footer {
         width: 600px;
     }
+
+    .catalog-grid {
+        grid-template-columns: repeat(1, 413px);
+        gap: 20px;
+
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+
 }
 
 @media(max-width: 600px) {
@@ -1105,5 +1240,29 @@ footer section {
     .contact-item {
         height: 30px;
         column-gap: 5px;
+    }
+
+    .catalog__title {
+        margin-bottom: 24px;
+    }
+
+    .categories {
+        column-gap: 10px;
+        margin-bottom: 16px;
+    }
+
+    .catalog-grid {
+        grid-template-columns: repeat(1, 348px);
+
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .card {
+        width: 348px;
+        aspect-ratio: 1;
+
+        border: 0.8px solid var(--color-cards);
+        border-radius: 9px;
     }
 }

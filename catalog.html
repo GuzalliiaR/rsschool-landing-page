@@ -3,9 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Xtragleam</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/png" href="./icon/favicon/favicon.png">
+    <link rel="icon" type="image/svg+xml" href="./icon/favicon/favicon.svg">
 </head>
 <body>
-    <h1>Catalog</h1>
+    <div class="container">
+        <header>
+            <a class="logo" href="https://guzalliiar.github.io/rsschool-landing-page/" target="_self">
+                <img class="logo__img" src="./icon/logo.svg" alt="Logo" loading="lazy" width="54" height="58">
+                <h1 class="logo__title">
+                    <span class="logo__title_font1">trag</span><span class="logo__title_font2">leam</span>
+                </h1>
+            </a>
+    
+            <nav class="header__nav">
+                <ul class="heder-menu">
+                    <li>
+                        <a class="open-page" href="./index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="./catalog.html">Catalog</a>
+                    </li>
+                    <li>
+                        <a href="#about">About us</a>
+                    </li>
+                    <li>
+                        <a href="#reviews">Reviews</a>
+                    </li>
+                    <li>
+                        <a href="#contacts">Contacts</a>
+                    </li>
+                </ul>
+            </nav>
+    
+            <div class="header__actions">
+                <button class="burger" title="Open menu" type="button">
+                    <img src="./icon/category.svg" alt="Open menu" loading="lazy" width="40" height="40">
+                </button>
+    
+                <button class="btnSun" title="Light theme" type="button">
+                    <img src="./icon/sun.svg" alt="light theme" loading="lazy" width="50" height="50">
+                </button>
+    
+                <button class="btnMoon visually-hidden" title="Dark theme" type="button">
+                    <img src="./icon/moon.svg" alt="dark theme" loading="lazy" width="50" height="50">
+                </button>
+    
+                <a class="btnBag" href="#">
+                    <img src="./icon/bag.svg" alt="Bag" loading="lazy" width="50" height="50">
+                </a>
+    
+                <a class="btnProfile" href="#">
+                    <img src="./icon/profile.svg" alt="Profile" loading="lazy" width="50" height="50">
+                </a>
+            </div>
+        </header>
+    
+        <main>
+            <h3 class="catalog__title">Catalog</h3>
+
+            <nav class="categories">
+                <button class="category-btn active" type="button" data-filter="all">All</button>
+                <button class="category-btn" type="button" data-filter="face">For face</button>
+                <button class="category-btn" type="button" data-filter="body">For body</button>
+            </nav>
+
+            <section>
+                <div class="catalog-grid">
+                    <article class="card" data-category="body">
+                        <img src="./img/catalog/X5 Extreme Body Lotion.png" alt="Photo X5 Extreme Body Lotion" width="238" height="214">
+                        <div class="card__description">
+                            <h4 class="card__subtitle">X5 Extreme Body Lotion</h4>
+                            <p>300 ml / <span class="price">&dollar;15.00</span></p>
+                        </div>
+                    </article>
+                    
+                    <article class="card" data-category="face">
+                        <img src="./img/catalog/AHA Face Toner.png" alt="Photo AHA Face Toner" width="86" height="268">
+                        <div class="card__description">
+                            <h4 class="card__subtitle">AHA Face Toner</h4>
+                            <p>250 ml / <span class="price">&dollar;10.00</span></p>
+                        </div>
+                    </article>
+                    
+                    <article class="card" data-category="body">
+                        <img src="./img/catalog/Anti Strecthmark Oil.png" alt="Photo AHA Face Toner" width="78" height="227">
+                        <div class="card__description">
+                            <h4 class="card__subtitle">Anti Strecthmark Oil</h4>
+                            <p>250 ml / <span class="price">&dollar;25.00</span></p>
+                        </div>
+                    </article>
+                    
+                    <article class="card" data-category="body face">
+                        <img src="./img/catalog/Acne Serum.png" alt="Photo Acne Serum" width="136" height="255">
+                        <div class="card__description">
+                            <h4 class="card__subtitle">Acne Serum</h4>
+                            <p>50 ml / <span class="price">&dollar;12.00</span></p>
+                        </div>
+                    </article>
+                    
+                    <article class="card" data-category="body">
+                        <img src="./img/catalog/Luminous Body Lotion.png" alt="Photo Luminous Body Lotion" width="107" height="246">
+                        <div class="card__description">
+                            <h4 class="card__subtitle">Luminous Body Lotion</h4>
+                            <p>500 ml / <span class="price">&dollar;17.00</span></p>
+                        </div>
+                    </article>
+                    
+                    <article class="card" data-category="body face">
+                        <img src="./img/catalog/Skin Glow Moisturizing Lotion.png" alt="Photo Skin Glow Moisturizing Lotion" width="162"
+                            height="268">
+                        <div class="card__description">
+                            <h4 class="card__subtitle">Skin Glow Moisturizing Lotion</h4>
+                            <p>400 ml / <span class="price">&dollar;20.00</span></p>
+                        </div>
+                    </article>
+                    
+                    <article class="card" data-category="face">
+                        <img src="./img/catalog/X5 Extreme Vitamin C Face Cream.png" alt="Photo X5 Extreme Vitamin C Face Cream" width="238"
+                            height="214">
+                        <div class="card__description">
+                            <h4 class="card__subtitle">X5 Extreme Vitamin C Face Cream</h4>
+                            <p>50 ml / <span class="price">&dollar;10.00</span></p>
+                        </div>
+                    </article>
+                    
+                    <article class="card" data-category="body face">
+                        <img src="./img/catalog/Extra-moisturizing Kosovar oil.png" alt="Photo Extra-moisturizing Kosovar oil" width="78"
+                            height="227">
+                        <div class="card__description">
+                            <h4 class="card__subtitle">Extra-moisturizing coconut oil</h4>
+                            <p>250 ml / <span class="price">&dollar;20.00</span></p>
+                        </div>
+                    </article>
+                </div>
+            
+                <button class="moreCards-btn" type="button">Show More</button>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <div class="container-footer">
+            <div class="container-footer__links">
+                <a class="logo" href="https://guzalliiar.github.io/rsschool-landing-page/" target="_self">
+                    <img class="logo__img" src="./icon/logo-light.svg" alt="Logo" loading="lazy" width="54" height="58">
+                    <span class="logo__title_inFooter">
+                        <span class="logo__title_font1">trag</span><span class="logo__title_font2">leam</span>
+                    </span>
+                </a>
+                <div class="social-media">
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <img src="./icon/instagram.svg" alt="Instagram icon" width="50" height="50">
+                    </a>
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <img src="./icon/facebook.svg" alt="Facebook icon" width="50" height="50">
+                    </a>
+                    <a href="https://web.telegram.org/" target="_blank">
+                        <img src="./icon/telegram.svg" alt="Telegram icon" width="50" height="50">
+                    </a>
+                </div>
+            </div>
+            <section class="contacts-section" id="contacts">
+                <h3 class="contacts-section__title">Contacts</h3>
+                <ul class="contacts-section__list">
+                    <li class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.6663 8.33329C16.6663 12.0152 9.99967 18.3333 9.99967 18.3333C9.99967 18.3333 3.33301 12.0152 3.33301 8.33329C3.33301 4.65139 6.31778 1.66663 9.99967 1.66663C13.6816 1.66663 16.6663 4.65139 16.6663 8.33329Z"
+                                stroke="#E1D4C9" stroke-width="1.5" />
+                            <path
+                                d="M10.0003 9.16667C10.4606 9.16667 10.8337 8.79357 10.8337 8.33333C10.8337 7.8731 10.4606 7.5 10.0003 7.5C9.54009 7.5 9.16699 7.8731 9.16699 8.33333C9.16699 8.79357 9.54009 9.16667 10.0003 9.16667Z"
+                                fill="#E1D4C9" stroke="#E1D4C9" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+    
+                        <span>8558 Green Rd., LA</span>
+                    </li>
+                    <li class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M15.0984 12.2516L11.6665 12.9166C9.34845 11.7531 7.91654 10.4166 7.08321 8.33329L7.72483 4.89154L6.51197 1.66663L3.72946 1.66663C2.60191 1.66663 1.71466 2.59958 1.90108 3.71161C2.29888 6.08454 3.37231 10.0391 6.24987 12.9166C9.27338 15.9401 13.5661 17.3318 16.1378 17.9288C17.299 18.1983 18.3332 17.2908 18.3332 16.0988L18.3332 13.4843L15.0984 12.2516Z"
+                                stroke="#E1D4C9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+    
+                        <a href="tel:+16035550123">+1 (603) 555-0123</a>
+                    </li>
+                    <li class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_217_1736)">
+                                <path d="M10 5L10 10L15 10" stroke="#E1D4C9" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M10.0003 18.3333C14.6027 18.3333 18.3337 14.6023 18.3337 9.99996C18.3337 5.39759 14.6027 1.66663 10.0003 1.66663C5.39795 1.66663 1.66699 5.39759 1.66699 9.99996C1.66699 14.6023 5.39795 18.3333 10.0003 18.3333Z"
+                                    stroke="#E1D4C9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_217_1736">
+                                    <rect width="20" height="20" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+    
+                        <span>Mon-Sat: <time datetime="09:00">9:00 AM</time> – <time datetime="23:00">23:00 PM</time></span>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </footer>
 </body>
 </html>
