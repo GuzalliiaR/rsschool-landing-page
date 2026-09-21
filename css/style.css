@@ -348,6 +348,7 @@ img,
 textarea,
 svg * {
     transition-duration: var(--transition-duration);
+    color: currentColor;
 }
 
 a {
