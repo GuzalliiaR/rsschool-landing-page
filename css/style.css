@@ -689,6 +689,7 @@ footer section {
 .social-media {
     display: flex;
     column-gap: 12px;
+    margin-top: 30px;
 }
 
 .contacts-section__title {
@@ -699,10 +700,6 @@ footer section {
     display: flex;
     flex-direction: column;
     justify-content: center
-}
-
-.social-media {
-    margin-top: 30px;
 }
 
 .contact-item {
@@ -766,6 +763,15 @@ footer section {
 
     section {
         margin-bottom: 70px;
+    }
+
+    footer {
+        font-size: 18px;
+        padding-block: 35px;
+    }
+
+    footer h3 {
+        font-size: 20px;
     }
 
     .header__nav {
@@ -841,6 +847,20 @@ footer section {
     .radiant-skin__img {
         width: 400px;
     }
+
+    .container-footer {
+        width: 800px;
+    }
+
+    .social-media img {
+        width: 40px;
+        height: auto;
+    }
+
+    .contacts-section__title {
+        margin-bottom: 15px;
+    }
+
 }
 
 @media(max-width: 860px) {
@@ -854,6 +874,11 @@ footer section {
 
     section {
         margin-bottom: 40px;
+    }
+
+    footer {
+        font-size: 16px;
+        padding-block: 30px;
     }
 
     .btnSun,
@@ -915,9 +940,13 @@ footer section {
         margin-bottom: 34px;
     }
 
-        .radiant-skin__img {
-            width: 340px;
-        }
+    .radiant-skin__img {
+        width: 340px;
+    }
+
+    .container-footer {
+        width: 600px;
+    }
 }
 
 @media(max-width: 600px) {
@@ -1036,11 +1065,45 @@ footer section {
     .radiant-skin__goArticles::after {
         margin-left: 4px;
     }
-        .radiant-skin__goArticles::after {
-            width: 20px;
-            aspect-ratio: 1;
-            margin-left: 4px;
-    
-            background-image: url(../icon/arrow-right-light-smoll.svg);
-        }
+
+    .radiant-skin__goArticles::after {
+        width: 20px;
+        aspect-ratio: 1;
+        margin-left: 4px;
+
+        background-image: url(../icon/arrow-right-light-smoll.svg);
+    }
+
+    .container-footer {
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 30px;
+        width: 350px;
+    }
+
+    .logo__title_inFooter {
+        font-size: 36px;
+    }
+
+    footer .logo{
+        align-self: flex-start;
+    }
+
+    .social-media {
+        align-self: flex-end;
+    }
+
+    .social-media {
+        margin-top: 0;
+    }
+
+    .social-media img {
+        width: 30px;
+        height: auto;
+    }
+
+    .contact-item {
+        height: 30px;
+        column-gap: 5px;
+    }
 }
