@@ -260,6 +260,8 @@ svg * {
     --color-header-nav-highlight: #2E2E2E;
     --color-light-pink: #FFF6FD;
     --color-gray: #EFEFEF;
+    --color-footer-bg: #121212;
+    --color-footer-text: #FFFFFF;
 
     --font-familly: 'DM Sans', sans-serif;
     --font-familly-logo1: 'Playfair Display', sans-serif;
@@ -308,6 +310,12 @@ h4 {
     font-weight: 500;
     font-size: 27px;
     line-height: 1.2em;
+}
+
+footer h3 {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1em;
 }
 
 a,
@@ -366,6 +374,20 @@ main {
 section {
     width: 100%;
     margin-bottom: 100px;
+}
+
+footer {
+    width: 100%;
+    font-size: 20px;
+    padding-block: 50px;
+
+    color: var(--color-footer-text);
+    background-color: var(--color-footer-bg);
+}
+
+footer section {
+    width: auto;
+    margin-bottom: 0;
 }
 
 
@@ -647,6 +669,48 @@ section {
     width: 550px;
     height: auto;
 }
+
+.logo__title_inFooter {
+    font-weight: 500;
+    font-size: 49px;
+    letter-spacing: -0.06em;
+    line-height: 1em;
+    color: var(--color-footer-text);
+    margin-left: -6px;
+}
+
+.container-footer {
+    display: flex;
+    justify-content: space-between;
+    width: 1085px;
+    margin: auto;
+}
+
+.social-media {
+    display: flex;
+    column-gap: 12px;
+}
+
+.contacts-section__title {
+    margin-bottom: 25px;
+}
+
+.container-footer__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+.social-media {
+    margin-top: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
 
 
 /* 6. Утилиты (Utilities) ← .visually-hidden, .text-center, .mt-2  */
