@@ -276,7 +276,20 @@ svg * {
 
 /* Теманая тема */
 [data-theme="dark"] {
-    --color-bg: #121212;
+    --color-bg: #2E323A;
+    --color-gray-bg: #3A3F49;
+    --color-gray-btn: #6B7382;
+    --color-text-btn: #24272E;
+    --color-text-dark: #EEF1F6;
+    --color-h1: #FFFFFF;
+    --color-btn: #EAF0F7;
+    --color-header-nav: #BFC7D3;
+    --color-header-nav-highlight: #FFFFFF;
+    --color-light-pink: #583B4E;             /* hero: выраженный розово-сливовый */
+    --color-gray: #484E5A;
+    --color-footer-bg: #33373F;
+    --color-footer-text: #EDF0F5;
+    --color-cards: #454B56;
 }
 
 
