@@ -271,7 +271,7 @@ svg * {
     --container-width: 1280px;
     --container-padding-x: 5px;
 
-    --transition-duration: 0.2s;
+    --transition-duration: 0.3s;
 }
 
 /* Теманая тема */
@@ -364,6 +364,33 @@ article p:not(:last-child) {
     margin-bottom: 10px;
 }
 
+header nav a {
+    display: inline-block;
+    padding: 5px;
+
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0 2px;    /*ширина градиента 0, высота градиента 2px*/
+    background-repeat: no-repeat;
+    background-position: 50% 90%;   /*50% - центр по горизонтали родителя, 100% - низ по вертикали родителя*/
+    transition: background-size var(--transition-duration) ease;
+}
+
+footer ul a {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0 1px;    /*ширина градиента 0, высота градиента 1px*/
+    background-repeat: no-repeat;
+    background-position: 50% 85%;   /*50% - центр по горизонтали родителя, 85% - почти низ по вертикали родителя*/
+    transition: background-size var(--transition-duration) ease;
+}
+
+header nav a:hover {
+    background-size: 100% 2px;
+}
+
+footer ul a:hover {
+    background-size: 100% 1px;
+}
+
 
 /* 4. Layout ← крупные блоки: container, grid, header, footer  */
 .container {
@@ -384,10 +411,6 @@ header {
 
 header nav {
     color: var(--color-header-nav);
-}
-
-nav li a {
-    padding: 5px;
 }
 
 main {
@@ -431,12 +454,11 @@ footer section {
 
 .heder-menu {
     display: inline-flex;
-    column-gap: 22px;
+    column-gap: 20px;
 }
 
 .open-page {
     font-weight: 500;
-    border-bottom: 2px solid var(--color-header-nav);
     color: var(--color-header-nav-highlight);
 }
 
@@ -860,16 +882,11 @@ footer section {
 /* 7. Медиа-запросы ← адаптив (или внутри каждого слоя) */
 @media (any-hover: hover) {
     nav a:hover {
-        background-color: var(--color-gray);
-        border-radius: 5px;
-        border-color: var(--color-gray);
         color: var(--color-header-nav-highlight);
     }
 
     .header__actions img:hover {
-        background-color: var(--color-gray);
         padding: 5px;
-        border-radius: 5px;
     }
 }
 
