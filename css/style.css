@@ -471,7 +471,6 @@ footer section {
     height: auto;
     border: none;
     padding: 0;
-    background-color: var(--color-bg);
 }
 
 .header__actions img {
@@ -487,7 +486,7 @@ footer section {
 }
 
 [data-theme="dark"] .theme-toggle__icon--dark {
-    display: inline;
+    display: block;
 }
 
 .burger {
