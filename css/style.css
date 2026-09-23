@@ -346,6 +346,7 @@ button,
 input,
 img,
 textarea,
+a svg,
 svg * {
     transition-duration: var(--transition-duration);
     color: currentColor;
@@ -906,7 +907,8 @@ footer section {
         color: var(--color-header-nav-highlight);
     }
 
-    .header__actions img:hover {
+    .header__actions img:hover,
+    .header__actions svg:hover {
         padding: 5px;
     }
 }
@@ -960,7 +962,8 @@ footer section {
         display: block;
     }
 
-    .header__actions img {
+    .header__actions img,
+    .header__actions svg {
         height: 40px;
         width: 40px;
     }

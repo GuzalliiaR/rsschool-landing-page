@@ -13,19 +13,20 @@
         <header>
             <a class="logo" href="https://guzalliiar.github.io/rsschool-landing-page/" target="_self">
                 <img class="logo__img logo__img--light" src="./icon/logo.svg" alt="Logo" loading="lazy" width="54" height="58">
-                <img class="logo__img logo__img--dark" src="./icon/logo-light.svg" alt="Logo" loading="lazy" width="54" height="58">
+                <img class="logo__img logo__img--dark" src="./icon/logo-light.svg" alt="Logo" loading="lazy" width="54"
+                    height="58">
                 <h1 class="logo__title">
                     <span class="logo__title_font1">trag</span><span class="logo__title_font2">leam</span>
                 </h1>
             </a>
-    
+        
             <nav class="header__nav">
                 <ul class="heder-menu">
                     <li>
-                        <a href="./index.html">Home</a>
+                        <a class="open-page" href="./index.html">Home</a>
                     </li>
                     <li>
-                        <a class="open-page" href="./catalog.html">Catalog</a>
+                        <a href="./catalog.html">Catalog</a>
                     </li>
                     <li>
                         <a href="./index.html#about">About us</a>
@@ -38,23 +39,47 @@
                     </li>
                 </ul>
             </nav>
-    
+        
             <div class="header__actions">
                 <button class="burger" title="Open menu" type="button">
                     <img src="./icon/category.svg" alt="Open menu" loading="lazy" width="40" height="40">
                 </button>
-    
+        
                 <button class="btn-them" id="theme-toggle" title="Change theme" type="button" aria-pressed="false">
-                    <img class="theme-toggle__icon--light" src="./icon/sun.svg" alt="light theme" loading="lazy" width="50" height="50">
-                    <img class="theme-toggle__icon--dark" src="./icon/moon.svg" alt="dark theme" loading="lazy" width="50" height="50">
+                    <img class="theme-toggle__icon--light" src="./icon/sun.svg" alt="light theme" loading="lazy" width="50"
+                        height="50">
+                    <img class="theme-toggle__icon--dark" src="./icon/moon.svg" alt="dark theme" loading="lazy" width="50"
+                        height="50">
                 </button>
-    
-                <a class="btnBag" href="#">
-                    <img src="./icon/bag.svg" alt="Bag" loading="lazy" width="50" height="50">
+        
+                <a class="btnBag" href="#" aria-label="Bag">
+                    <svg class="icon icon__bag" width="50" height="50" viewBox="0 0 50 50" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path
+                            d="M15.625 15.9792V13.9583C15.625 9.27083 19.3958 4.66667 24.0833 4.22917C29.6667 3.6875 34.375 8.08334 34.375 13.5625V16.4375"
+                            stroke="#121212" stroke-width="1.37086" stroke-miterlimit="10" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path
+                            d="M18.75 45.8333H31.25C39.625 45.8333 41.125 42.4792 41.5625 38.3958L43.125 25.8958C43.6875 20.8125 42.2292 16.6667 33.3333 16.6667H16.6667C7.77084 16.6667 6.31251 20.8125 6.87501 25.8958L8.43751 38.3958C8.87501 42.4792 10.375 45.8333 18.75 45.8333Z"
+                            stroke="#121212" stroke-width="1.37086" stroke-miterlimit="10" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M32.2823 25H32.301" stroke="#292D32" stroke-width="2.44796" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M17.6969 25H17.7156" stroke="#292D32" stroke-width="2.44796" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
                 </a>
-    
-                <a class="btnProfile" href="#">
-                    <img src="./icon/profile.svg" alt="Profile" loading="lazy" width="50" height="50">
+        
+                <a class="btnProfile" href="#" aria-label="Profile">
+                    <svg class="icon icon__profile" width="50" height="50" viewBox="0 0 50 50" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path
+                            d="M25.3333 22.6458C25.125 22.625 24.875 22.625 24.6458 22.6458C19.6875 22.4792 15.75 18.4167 15.75 13.4167C15.75 8.3125 19.875 4.16666 25 4.16666C30.1042 4.16666 34.25 8.3125 34.25 13.4167C34.2292 18.4167 30.2917 22.4792 25.3333 22.6458Z"
+                            stroke="#121212" stroke-width="1.37086" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M14.9166 30.3333C9.87496 33.7083 9.87496 39.2083 14.9166 42.5625C20.6458 46.3958 30.0416 46.3958 35.7708 42.5625C40.8125 39.1875 40.8125 33.6875 35.7708 30.3333C30.0625 26.5208 20.6666 26.5208 14.9166 30.3333Z"
+                            stroke="#121212" stroke-width="1.37086" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
                 </a>
             </div>
         </header>
