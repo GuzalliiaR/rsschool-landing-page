@@ -663,6 +663,7 @@ footer section {
 
 .reviews-section__btn {
     border: none;
+    background-color: var(--color-gray-bg);
 }
 
 .reviews-section__arrowSlider_toright {
