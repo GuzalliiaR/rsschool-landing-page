@@ -752,6 +752,15 @@ footer section {
     margin-top: 30px;
 }
 
+.social-media a {
+    transform: scale(1);
+    transition: transform var(--transition-duration) ease;
+}
+
+.social-media a:hover {
+    transform: scale(0.9);
+}
+
 .contacts-section__title {
     margin-bottom: 25px;
 }
@@ -817,7 +826,7 @@ footer section {
     background-color: var(--color-cards);
 
     transform: scale(1);
-    transition: transform 0.3s ease;
+    transition: transform var(--transition-duration) ease;
 }
 
 .card:hover {
