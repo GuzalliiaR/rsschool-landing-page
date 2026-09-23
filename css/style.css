@@ -815,6 +815,13 @@ footer section {
     border: 1px solid var(--color-cards);
     border-radius: 10px;
     background-color: var(--color-cards);
+
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(0.9);
 }
 
 .card img {
@@ -861,6 +868,9 @@ footer section {
     background-repeat: no-repeat;
     background-size: contain;
 }
+
+
+
 
 /* 6. Утилиты (Utilities) ← .visually-hidden, .text-center, .mt-2  */
 .visually-hidden {
