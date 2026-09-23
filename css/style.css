@@ -642,6 +642,7 @@ footer section {
 }
 
 .reviews-section__slideIMG {
+    border-radius: 50%;
     margin: auto;
     margin-bottom: 20px;
 }
