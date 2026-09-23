@@ -556,19 +556,15 @@ footer section {
     aspect-ratio: 1;
     margin-left: 5.5px;
 
-    background-image: url('../icon/arrow-right.svg');
-    background-position: center;
-    background-repeat: no-repeat;
+    /* mask — это CSS-свойство, которое использует изображение как «трафарет» для элемента. */
+    background-color: currentColor;  /*background-color: currentColor — заливает всю прямоугольную область псевдоэлемента текущим цветом (currentColor)*/
+    -webkit-mask: url('../icon/arrow-right.svg') center / contain no-repeat; /* -webkit-mask: для Safari, старого Chrome/Edge и т.д.    mask: для Firefox и современных браузеров */
+    mask: url('../icon/arrow-right.svg') center / contain no-repeat;   /*mask: url(arrow-right.svg) ... — «вырезает» из этой заливки только форму стрелки.*/
 }
 
 .hero-section__goCatalog:hover {
     background-color: var(--color-gray);
     color: var(--color-btn);
-}
-
-.hero-section__goCatalog:hover::after {
-    background-color: var(--color-btn);
-    border-radius: 50%;
 }
 
 .hero-section__logo,
@@ -715,19 +711,14 @@ footer section {
     aspect-ratio: 1;
     margin-left: 5.5px;
 
-    background-image: url(../icon/arrow-right-light.svg);
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: currentColor;
+    -webkit-mask: url(../icon/arrow-right-light.svg) center / contain no-repeat;
+    mask: url(../icon/arrow-right-light.svg) center / contain no-repeat;
 }
 
 .radiant-skin__goArticles:hover {
     background-color: var(--color-btn);
     color: var(--color-text-btn);
-}
-
-.radiant-skin__goArticles:hover::after {
-    border-radius: 50%;
-    background-color: var(--color-bg);
 }
 
 .radiant-skin__img {
@@ -860,27 +851,38 @@ footer section {
     border: none;
     padding: 10px 15px;
     background-color: var(--color-bg);
+    transform: scale(1);
+    transition: transform var(--transition-duration) ease;
     
     display: inline-flex;
     align-items: center;
     justify-content: center;
 }
 
-.moreCards-btn:hover {
-    font-weight: 500;
-}
-
-.moreCards-btn:hover::after {
+.moreCards-btn::after {
     content: "";
     display: inline-block;
     width: 40px;
     height: 22.5px;
     margin-left: 5.5px;
 
-    background-image: url('../icon/arrow-ShowMore.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+    background-color: currentColor;
+    -webkit-mask: url('../icon/arrow-ShowMore.svg') center / contain no-repeat;
+    mask: url('../icon/arrow-ShowMore.svg') center / contain no-repeat;
+
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity var(--transition-duration) ease, transform var(--transition-duration) ease;
+}
+
+.moreCards-btn:hover {
+    font-weight: 500;
+    transform: scale(1.1);
+}
+
+.moreCards-btn:hover::after {
+    opacity: 1;
+    transform: scale(1);
 }
 
 
