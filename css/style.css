@@ -1,0 +1,1351 @@
+/* 1. Сброс / нормализация ← reset.css, normalize.css  */
+/**
+  Нормализация блочной модели
+ */
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+/**
+  Убираем внутренние отступы слева тегам списков,
+  у которых есть атрибут class
+ */
+:where(ul, ol):where([class]) {
+    padding-left: 0;
+}
+
+/**
+  Убираем внешние отступы body и двум другим тегам,
+  у которых есть атрибут class
+ */
+body,
+:where(blockquote, figure, fieldset):where([class]) {
+    margin: 0;
+}
+
+:where(dd[class]) {
+    margin-left: 0;
+}
+
+:where(fieldset[class]) {
+    padding: 0;
+    border: none;
+}
+
+/**
+  Убираем стандартный маркер маркированному списку,
+  у которого есть атрибут class
+ */
+:where(ul[class]) {
+    list-style: none;
+}
+
+:where(address[class]) {
+    font-style: normal;
+}
+
+/**
+  Обнуляем вертикальные внешние отступы параграфа,
+  объявляем локальную переменную для внешнего отступа вниз,
+  чтобы избежать взаимодействие с более сложным селектором
+ */
+p {
+    --paragraphMarginBottom: 24px;
+
+    margin-block: 0;
+}
+
+/**
+  Внешний отступ вниз для параграфа без атрибута class,
+  который расположен не последним среди своих соседних элементов
+ */
+p:where(:not([class]):not(:last-child)) {
+    margin-bottom: var(--paragraphMarginBottom);
+}
+
+
+/**
+  Упрощаем работу с изображениями и видео
+ */
+img,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/**
+  Наследуем свойства шрифт для полей ввода
+ */
+input,
+textarea,
+select,
+button {
+    font: inherit;
+}
+
+html {
+    /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+    height: 100%;
+    /**
+    Убираем скачок интерфейса по горизонтали
+    при появлении / исчезновении скроллбара
+   */
+    scrollbar-gutter: stable;
+    /**
+    Плавный скролл
+   */
+    scroll-behavior: smooth;
+}
+
+body {
+    /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+    min-height: 100%;
+    /**
+    Унифицированный интерлиньяж
+   */
+    line-height: 1.5;
+}
+
+/**
+  Нормализация высоты элемента ссылки при его инспектировании в DevTools
+ */
+a:where([class]) {
+    display: inline-flex;
+}
+
+/**
+  Курсор-рука при наведении на элемент
+ */
+button,
+label {
+    cursor: pointer;
+}
+
+/**
+  Убирает серую подсветку при тапе на мобильных устройствах (iOS/Android)
+ */
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/**
+  Убираем внешние отступы вертикали нужным тегам,
+  у которых есть атрибут class
+ */
+:where(h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    ol,
+    dl):where([class]) {
+    margin-block: 0;
+}
+
+/**
+  Приводим к единому цвету svg-элементы
+  (за исключением тех, у которых уже указан
+  атрибут fill со значением 'none' или начинается с 'url')
+ */
+:where([fill]:not([fill="none"],
+        [fill^="url"])) {
+    fill: currentColor;
+}
+
+/**
+  Приводим к единому цвету svg-элементы
+  (за исключением тех, у которых уже указан
+  атрибут stroke со значением 'none')
+ */
+:where([stroke]:not([stroke="none"],
+        [stroke^="url"])) {
+    stroke: currentColor;
+}
+
+/**
+  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+ */
+svg * {
+    transition-property: fill, stroke;
+}
+
+/**
+  Приведение рамок таблиц в классический 'collapse' вид
+ */
+:where(table) {
+    border-collapse: collapse;
+    border-color: currentColor;
+}
+
+/**
+  Удаляем все анимации и переходы для людей,
+  которые предпочитают их не использовать
+ */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    ::before,
+    ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+
+/* 2. Настройки (Settings) ← переменные, :root, шрифты через @font-face */
+@font-face {
+    font-family: 'DM Sans';
+    src: url('./fonts/DMSans-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url('./fonts/DMSans-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url('./fonts/DMSans-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('./fonts/PlayfairDisplay-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./fonts/Montserrat-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --color-bg: #FFFFFF;
+    --color-gray-bg: #F0F0F0;
+    --color-gray-btn: #CFCFCF;
+    --color-text-btn: #FFFFFF;
+    --color-text-dark: #000000;
+    --color-h1: #121212;
+    --color-btn: #121212;
+    --color-header-nav: #545454;
+    --color-header-nav-highlight: #2E2E2E;
+    --color-light-pink: #FFF6FD;
+    --color-gray: #EFEFEF;
+    --color-footer-bg: #121212;
+    --color-footer-text: #FFFFFF;
+    --color-cards: #E4E4E4;
+
+    --font-familly: 'DM Sans', sans-serif;
+    --font-familly-logo1: 'Playfair Display', sans-serif;
+    --font-familly-logo2: 'Montserrat', sans-serif;
+
+    --container-width: 1280px;
+    --container-padding-x: 5px;
+
+    --transition-duration: 0.3s;
+}
+
+/* Теманая тема */
+[data-theme="dark"] {
+    --color-bg: #2E323A;
+    --color-gray-bg: #3A3F49;
+    --color-gray-btn: #6B7382;
+    --color-text-btn: #24272E;
+    --color-text-dark: #EEF1F6;
+    --color-h1: #FFFFFF;
+    --color-btn: #EAF0F7;
+    --color-header-nav: #BFC7D3;
+    --color-header-nav-highlight: #FFFFFF;
+    --color-light-pink: #583B4E;             /* hero: выраженный розово-сливовый */
+    --color-gray: #484E5A;
+    --color-footer-bg: #33373F;
+    --color-footer-text: #EDF0F5;
+    --color-cards: #454B56;
+}
+
+
+
+/* 3. База (Base) ← стили для голых тегов (body, h1, a, p)  */
+body {
+    font-family: var(--font-familly);
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 1.5em;
+    letter-spacing: -0.01em;
+    color: var(--color-text-dark);
+    background-color: var(--color-bg);
+}
+
+h1 {
+    font-weight: 500;
+    font-size: 49px;
+    letter-spacing: -0.06em;
+    line-height: 1em;
+    color: var(--color-h1);
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 1em;
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 1em;
+}
+
+h4 {
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 1.2em;
+}
+
+footer h3 {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1em;
+}
+
+.catalog-grid h4 {
+    font-size: 23px;
+}
+
+a,
+button,
+input,
+img,
+textarea,
+a svg,
+svg * {
+    transition-duration: var(--transition-duration);
+    color: currentColor;
+}
+
+a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+button {
+    border-radius: 5px;
+}
+
+article p:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+header nav a {
+    display: inline-block;
+    padding: 5px;
+
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0 2px;    /*ширина градиента 0, высота градиента 2px*/
+    background-repeat: no-repeat;
+    background-position: 50% 90%;   /*50% - центр по горизонтали родителя, 100% - низ по вертикали родителя*/
+    transition: background-size var(--transition-duration) ease;
+}
+
+footer ul a {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0 1px;    /*ширина градиента 0, высота градиента 1px*/
+    background-repeat: no-repeat;
+    background-position: 50% 85%;   /*50% - центр по горизонтали родителя, 85% - почти низ по вертикали родителя*/
+    transition: background-size var(--transition-duration) ease;
+}
+
+header nav a:hover {
+    background-size: 100% 2px;
+}
+
+footer ul a:hover {
+    background-size: 100% 1px;
+}
+
+
+/* 4. Layout ← крупные блоки: container, grid, header, footer  */
+.container {
+    max-width: calc(var(--container-width) + 2 * var(--container-padding-x));
+    margin-inline: auto;
+    padding-inline: var(--container-padding-x);
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+header nav {
+    color: var(--color-header-nav);
+}
+
+main {
+    max-width: var(--container-width);
+    margin-inline: auto;
+}
+
+section {
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+footer {
+    width: 100%;
+    font-size: 20px;
+    padding-block: 50px;
+
+    color: var(--color-footer-text);
+    background-color: var(--color-footer-bg);
+}
+
+footer section {
+    width: auto;
+    margin-bottom: 0;
+}
+
+
+
+/* 5. Компоненты (Components) ← кнопки, карточки, формы, навигация  */
+.logo__title {
+    margin-left: -6px;
+}
+
+.logo__title_font1 {
+    font-family: var(--font-familly-logo1);
+}
+
+.logo__title_font2 {
+    font-family: var(--font-familly-logo2);
+}
+
+.heder-menu {
+    display: inline-flex;
+    column-gap: 20px;
+}
+
+.open-page {
+    font-weight: 500;
+    color: var(--color-header-nav-highlight);
+}
+
+.header__actions {
+    display: inline-flex;
+    column-gap: 20px;
+}
+
+.header__actions button {
+    height: auto;
+    border: none;
+    padding: 0;
+    background-color: var(--color-bg);
+}
+
+.header__actions img {
+    background-color: var(--color-bg);
+}
+
+.theme-toggle__icon--dark,
+.logo__img--dark {
+    display: none;
+}
+
+[data-theme="dark"] .theme-toggle__icon--light,
+[data-theme="dark"] .logo__img--light {
+    display: none;
+}
+
+[data-theme="dark"] .theme-toggle__icon--dark,
+[data-theme="dark"] .logo__img--dark {
+    display: block;
+}
+
+.burger {
+    display: none;
+    height: 40px;
+}
+
+.burgert__img {
+    display: block;
+}
+
+.hero-section {
+    position: relative;
+    height: 523px;
+    background-color: var(--color-light-pink);
+    border-radius: 20px;
+}
+
+.hero-section__info {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    max-width: 587px;
+    margin-left: 60px;
+}
+
+.hero-section__title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 13px;
+}
+
+.hero-section__title_line-top {
+    align-self: flex-start;
+}
+
+.hero-section__title_line-bottom {
+    align-self: flex-end;
+}
+
+.hero-section__text {
+    width: 100%;
+    margin-bottom: 40px;
+    font-size: 30px;
+    line-height: 1.2em;
+}
+
+.hero-section__goCatalog {
+    display: inline-flex;
+    align-items: center;
+    padding: 11px 21px ;
+    border-radius: 72px;
+    border: 1px solid var(--color-btn);
+
+    background-color: var(--color-btn);
+    color: var(--color-text-btn);
+    font-size: 32px;
+    line-height: 1.2em;
+}
+
+.hero-section__goCatalog::after {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    aspect-ratio: 1;
+    margin-left: 5.5px;
+
+    /* mask — это CSS-свойство, которое использует изображение как «трафарет» для элемента. */
+    background-color: currentColor;  /*background-color: currentColor — заливает всю прямоугольную область псевдоэлемента текущим цветом (currentColor)*/
+    -webkit-mask: url('../icon/arrow-right.svg') center / contain no-repeat; /* -webkit-mask: для Safari, старого Chrome/Edge и т.д.    mask: для Firefox и современных браузеров */
+    mask: url('../icon/arrow-right.svg') center / contain no-repeat;   /*mask: url(arrow-right.svg) ... — «вырезает» из этой заливки только форму стрелки.*/
+}
+
+.hero-section__goCatalog:hover {
+    background-color: var(--color-gray);
+    color: var(--color-btn);
+}
+
+.hero-section__logo,
+.hero-section__imgProduct {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-bottom-right-radius: 20px;
+}
+
+.hero-section__logo {
+    z-index: 0;
+}
+
+.hero-section__imgProduct {
+    z-index: 10;
+}
+
+.advantages-section {
+    height: 628px;
+    padding: 50px 40px;
+    background-color: var(--color-gray-bg);
+}
+
+.advantages-section__title {
+    margin-bottom: 50px;
+}
+
+.advantages-section__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    column-gap: 24px;
+}
+
+.advantages-section__subtitle {
+    margin-bottom: 10px;
+}
+
+.reviews-section {
+    padding: 50px 25px;
+    background-color: var(--color-gray-bg);
+}
+
+.reviews-section__title {
+    margin-bottom: 50px;
+}
+
+.reviews-section__viewport {
+    overflow: hidden;
+    margin-bottom: 10px;
+
+    width: 100%;
+}
+
+.reviews-section__slider {
+    display: flex;
+    align-items: start;
+    flex-wrap: nowrap;
+    column-gap: 15px;
+}
+
+.reviews-section__slide {
+    width: 450px;
+    flex-shrink: 0;    /*Запрет на уменьшение элемента внутри flex-контейнера */
+    padding: 37px 20px;
+    border-radius: 19px;
+
+    background-color: var(--color-bg);
+}
+
+.reviews-section__slideIMG {
+    border-radius: 50%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.reviews-section__slideSubtitle {
+    margin-bottom: 14px;
+}
+
+.reviews-section__nameAutor {
+    font-weight: 500;
+}
+
+.reviews-section__buttons {
+    display: flex;
+    justify-content: center;
+    column-gap: 15px;
+}
+
+.reviews-section__btn {
+    border: none;
+    background-color: var(--color-gray-bg);
+}
+
+.reviews-section__arrowSlider_toright {
+    transform: rotate(180deg);
+}
+
+.radiant-skin-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 50px;
+
+    background-color: var(--color-gray-bg);
+}
+
+.radiant-skin__info {
+    margin-block: 65px;
+    margin-left: 28px;
+}
+
+.radiant-skin__title {
+    margin-bottom: 60px;
+}
+
+.radiant-skin__subtitle {
+    margin-bottom: 10px;
+}
+
+.radiant-skin-section article {
+    margin-bottom: 60px;
+}
+
+.radiant-skin__goArticles {
+    display: inline-flex;
+    align-items: center;
+    padding: 11px 21px;
+    border-radius: 72px;
+    border: 1px solid var(--color-gray-btn);
+
+    background-color: var(--color-bg);
+    font-size: 32px;
+    line-height: 1.2em;
+}
+
+.radiant-skin__goArticles::after {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    aspect-ratio: 1;
+    margin-left: 5.5px;
+
+    background-color: currentColor;
+    -webkit-mask: url(../icon/arrow-right-light.svg) center / contain no-repeat;
+    mask: url(../icon/arrow-right-light.svg) center / contain no-repeat;
+}
+
+.radiant-skin__goArticles:hover {
+    background-color: var(--color-btn);
+    color: var(--color-text-btn);
+}
+
+.radiant-skin__img {
+    width: 550px;
+    height: auto;
+}
+
+.logo__title_inFooter {
+    font-weight: 500;
+    font-size: 49px;
+    letter-spacing: -0.06em;
+    line-height: 1em;
+    color: var(--color-footer-text);
+    margin-left: -6px;
+}
+
+.container-footer {
+    display: flex;
+    justify-content: space-between;
+    width: 1085px;
+    margin: auto;
+}
+
+.social-media {
+    display: flex;
+    column-gap: 12px;
+    margin-top: 30px;
+}
+
+.social-media a {
+    transform: scale(1);
+    transition: transform var(--transition-duration) ease;
+}
+
+.social-media a:hover {
+    transform: scale(0.9);
+}
+
+.contacts-section__title {
+    margin-bottom: 25px;
+}
+
+.container-footer__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.catalog__title {
+    margin-bottom: 50px;
+}
+
+.categories {
+    display: flex;
+    justify-content: center;
+    column-gap: 25px;
+    margin-bottom: 36px;
+}
+
+.category-btn {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid var(--color-gray);
+
+    background-color: var(--color-gray);
+}
+
+.category-btn:hover {
+    background-color: var(--color-bg);
+}
+
+.active {
+    font-weight: 500;
+    border: 2px solid var(--color-header-nav-highlight);
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 413px);
+    gap: 17px;
+    justify-content: center;
+
+    font-size: 25px;
+    margin-bottom: 36px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 415px;
+    aspect-ratio: 1;
+
+    border: 1px solid var(--color-cards);
+    border-radius: 10px;
+    background-color: var(--color-cards);
+
+    transform: scale(1);
+    transition: transform var(--transition-duration) ease;
+}
+
+.card:hover {
+    transform: scale(0.9);
+}
+
+.card img {
+    margin: auto;
+}
+
+.card__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 100%;
+    height: 103px;
+    padding-inline: 20px;
+
+    background-color: var(--color-bg);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.moreCards-btn {
+    border: none;
+    padding: 10px 15px;
+    background-color: var(--color-bg);
+    transform: scale(1);
+    transition: transform var(--transition-duration) ease;
+    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.moreCards-btn::after {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 22.5px;
+    margin-left: 5.5px;
+
+    background-color: currentColor;
+    -webkit-mask: url('../icon/arrow-ShowMore.svg') center / contain no-repeat;
+    mask: url('../icon/arrow-ShowMore.svg') center / contain no-repeat;
+
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity var(--transition-duration) ease, transform var(--transition-duration) ease;
+}
+
+.moreCards-btn:hover {
+    font-weight: 500;
+    transform: scale(1.1);
+}
+
+.moreCards-btn:hover::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+
+
+/* 6. Утилиты (Utilities) ← .visually-hidden, .text-center, .mt-2  */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    clip-path: inset(100%) !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+}
+
+
+
+
+/* 7. Медиа-запросы ← адаптив (или внутри каждого слоя) */
+@media (any-hover: hover) {
+    nav a:hover {
+        color: var(--color-header-nav-highlight);
+    }
+
+    .header__actions img:hover,
+    .header__actions svg:hover {
+        padding: 5px;
+    }
+}
+
+@media(max-width: 1320px) {
+    .catalog-grid {
+        grid-template-columns: repeat(2, 413px);
+        gap: 30px;
+    }
+}
+
+@media(max-width: 1200px) {
+    :root {
+        --container-width: 900px;
+    }
+
+    body {
+        font-size: 20px;
+    }
+
+    header {
+        margin-bottom: 35px;
+    }
+
+    h3 {
+        font-size: 40px;
+    }
+
+    section {
+        margin-bottom: 70px;
+    }
+
+    footer {
+        font-size: 18px;
+        padding-block: 35px;
+    }
+
+    footer h3 {
+        font-size: 20px;
+    }
+
+    .container {
+        margin-bottom: 70px;
+    }
+
+    .header__nav {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .header__actions img,
+    .header__actions svg {
+        height: 40px;
+        width: 40px;
+    }
+
+    .hero-section {
+        height: 490px;
+    }
+
+    .hero-section__text {
+        font-size: 20px;
+    }
+
+    .hero-section__imgProduct {
+        display: none;
+    }
+
+    .advantages-section {
+        height: 492px;
+        padding: 50px 40px;
+    }
+
+    .advantages-section__title {
+        margin-bottom: 30px;
+    }
+
+    .advantages-section__img {
+        width: 420px;
+        height: auto;
+    }
+
+    .reviews-section__title {
+        margin-bottom: 30px;
+    }
+
+    .reviews-section__slide {
+        width: 417px;
+    }
+
+    .reviews-section__arrowSlider_toleft,
+    .reviews-section__arrowSlider_toright {
+        width: 40px;
+        aspect-ratio: 1;
+    }
+
+    .radiant-skin-section {
+        column-gap: 30px;
+    }
+    
+    .radiant-skin__info {
+        margin-block: 50px;
+        margin-left: 25px;
+    }
+
+    .radiant-skin__title {
+        margin-bottom: 30px;
+    }
+
+    .radiant-skin-section article {
+        margin-bottom: 30px;
+    }
+
+    .radiant-skin__img {
+        width: 400px;
+    }
+
+    .container-footer {
+        width: 800px;
+    }
+
+    .social-media img {
+        width: 40px;
+        height: auto;
+    }
+
+    .contacts-section__title {
+        margin-bottom: 15px;
+    }
+
+    .catalog__title {
+        margin-bottom: 30px;
+    }
+
+    .categories {
+        column-gap: 18px;
+        margin-bottom: 30px;
+    }
+
+    .catalog-grid {
+        gap: 24px;
+        margin-bottom: 20px;
+    }
+
+    .moreCards-btn {
+        font-size: 25px;
+    }
+
+}
+
+@media(max-width: 860px) {
+    :root {
+        --container-width: 600px;
+    }
+
+    header {
+        margin-bottom: 30px;
+    }
+
+    section {
+        margin-bottom: 40px;
+    }
+
+    footer {
+        font-size: 16px;
+        padding-block: 30px;
+    }
+
+    .btn-them,
+    .btnMoon,
+    .btnBag,
+    .btnProfile {
+        display: none;
+    }
+
+    .hero-section {
+        display: flex;
+        align-items: center;
+        height: 444px;
+    }
+
+    .hero-section__info {
+        position: static;
+
+        max-width: 500px;
+        margin: auto;
+
+        transform: none;
+    }
+
+    .advantages-section {
+        height: 630px;
+        padding: 40px 30px;
+    }
+
+    .advantages-section__info {
+        flex-direction: column;
+        row-gap: 24px;
+    }
+
+    .advantages-section__img {
+        width: 340px;
+        height: auto;
+    }
+
+    .reviews-section {
+        padding: 40px 30px;
+    }
+
+    .radiant-skin-section {
+        flex-direction: column;
+        row-gap: 28px;
+        padding: 40px 30px;
+    }
+
+    .radiant-skin__info {
+        margin: 0;
+    }
+
+    .radiant-skin__title {
+        margin-bottom: 34px;
+    }
+
+    .radiant-skin-section article {
+        margin-bottom: 34px;
+    }
+
+    .radiant-skin__img {
+        width: 340px;
+    }
+
+    .container-footer {
+        width: 600px;
+    }
+
+    .catalog-grid {
+        grid-template-columns: repeat(1, 413px);
+        gap: 20px;
+
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+
+}
+
+@media(max-width: 600px) {
+    :root {
+        --container-width: 350px;
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {    
+        font-size: 55px;
+    }
+    
+    h3 {
+        font-size: 30px;
+        letter-spacing: -0.02em;
+    }
+    
+    h4 {
+        font-size: 20px;
+    }
+
+    article p:not(:last-child) {
+        margin-bottom: 6px;
+    }
+
+    .container {
+        margin-block: 30px;
+    }
+
+    section {
+        margin-bottom: 20px;
+    }
+
+    .logo__img {
+        width: 40px;
+        height: auto;
+    }
+
+    .hero-section__info {
+        max-width: 340px;
+    }
+
+    .hero-section__title {
+        margin-bottom: 15px;
+        align-items: center;
+    }
+
+    .hero-section__title_line-top {
+        align-self: auto;
+    }
+
+    .hero-section__title_line-bottom {
+        align-self: auto;
+    }
+
+    .hero-section__goCatalog {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .advantages-section {
+        height: 580px;
+        padding: 30px 5px;
+    }
+
+    .advantages-section__title {
+        margin-bottom: 24px;
+    }
+
+    .reviews-section {
+        padding: 30px 15px;
+    }
+
+    .reviews-section__title {
+        margin-bottom: 24px;
+    }
+    
+    .reviews-section__slide {
+        padding: 28px 15px;
+        width: 320px;
+    }
+
+    .reviews-section__slideIMG {
+        margin-bottom: 10px;
+    }
+
+    .reviews-section__slideSubtitle {
+        margin-bottom: 10px;
+    }
+
+    .radiant-skin-section {
+        padding: 30px 9px;
+    }
+
+    .radiant-skin__title {
+        font-size: 27px;
+    }
+
+    .radiant-skin__subtitle {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .radiant-skin__goArticles {
+        padding: 6px 12px;
+        font-size: 18px;
+    }
+
+    .radiant-skin__goArticles::after {
+        margin-left: 4px;
+    }
+
+    .radiant-skin__goArticles::after {
+        width: 20px;
+        aspect-ratio: 1;
+        margin-left: 4px;
+
+        background-image: url(../icon/arrow-right-light-smoll.svg);
+    }
+
+    .container-footer {
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 30px;
+        width: 350px;
+    }
+
+    .logo__title_inFooter {
+        font-size: 36px;
+    }
+
+    footer .logo{
+        align-self: flex-start;
+    }
+
+    .social-media {
+        align-self: flex-end;
+    }
+
+    .social-media {
+        margin-top: 0;
+    }
+
+    .social-media img {
+        width: 30px;
+        height: auto;
+    }
+
+    .contact-item {
+        height: 30px;
+        column-gap: 5px;
+    }
+
+    .catalog__title {
+        margin-bottom: 24px;
+    }
+
+    .categories {
+        column-gap: 10px;
+        margin-bottom: 16px;
+    }
+
+    .catalog-grid {
+        grid-template-columns: repeat(1, 348px);
+
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .card {
+        width: 348px;
+        aspect-ratio: 1;
+
+        border: 0.8px solid var(--color-cards);
+        border-radius: 9px;
+    }
+}

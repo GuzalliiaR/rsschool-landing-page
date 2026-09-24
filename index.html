@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xtragleam</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/png" href="./icon/favicon/favicon.png">
+    <link rel="icon" type="image/svg+xml" href="./icon/favicon/favicon.svg">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a 
+                class="logo"
+                href="https://guzalliiar.github.io/rsschool-landing-page/" 
+                target="_self"
+            >
+                <img class="logo__img logo__img--light" src="./icon/logo.svg" alt="Logo" loading="lazy" width="54" height="58">
+                <img class="logo__img logo__img--dark" src="./icon/logo-light.svg" alt="Logo" loading="lazy" width="54" height="58">
+                <h1 class="logo__title">
+                    <span class="logo__title_font1">trag</span><span class="logo__title_font2">leam</span>
+                </h1>
+            </a>
+
+            <nav class="header__nav">
+                <ul class="heder-menu">
+                    <li>
+                        <a class="open-page" href="./index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="./catalog.html">Catalog</a>
+                    </li>
+                    <li>
+                        <a href="./index.html#about">About us</a>
+                    </li>
+                    <li>
+                        <a href="./index.html#reviews">Reviews</a>
+                    </li>
+                    <li>
+                        <a href="#contacts">Contacts</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <button class="burger" title="Open menu" type="button">
+                    <svg class="burgert__img" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path
+                            d="M8.33337 16.6667H11.6667C15 16.6667 16.6667 15 16.6667 11.6667V8.33334C16.6667 5 15 3.33334 11.6667 3.33334H8.33337C5.00004 3.33334 3.33337 5 3.33337 8.33334V11.6667C3.33337 15 5.00004 16.6667 8.33337 16.6667Z"
+                            stroke="#121212" stroke-width="1.37086" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M28.3334 16.6667H31.6667C35 16.6667 36.6667 15 36.6667 11.6667V8.33334C36.6667 5 35 3.33334 31.6667 3.33334H28.3334C25 3.33334 23.3334 5 23.3334 8.33334V11.6667C23.3334 15 25 16.6667 28.3334 16.6667Z"
+                            stroke="#121212" stroke-width="1.37086" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M28.3334 36.6667H31.6667C35 36.6667 36.6667 35 36.6667 31.6667V28.3333C36.6667 25 35 23.3333 31.6667 23.3333H28.3334C25 23.3333 23.3334 25 23.3334 28.3333V31.6667C23.3334 35 25 36.6667 28.3334 36.6667Z"
+                            stroke="#121212" stroke-width="1.83597" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M8.33337 36.6667H11.6667C15 36.6667 16.6667 35 16.6667 31.6667V28.3333C16.6667 25 15 23.3333 11.6667 23.3333H8.33337C5.00004 23.3333 3.33337 25 3.33337 28.3333V31.6667C3.33337 35 5.00004 36.6667 8.33337 36.6667Z"
+                            stroke="#292D32" stroke-width="1.83597" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+
+                <button class="btn-them" id="theme-toggle" title="Change theme" type="button" aria-pressed="false">
+                    <img class="theme-toggle__icon--light" src="./icon/sun.svg" alt="light theme" loading="lazy" width="50" height="50">
+                    <img class="theme-toggle__icon--dark" src="./icon/moon.svg" alt="dark theme" loading="lazy" width="50" height="50">
+                </button>
+
+                <a class="btnBag" href="#" aria-label="Bag">
+                    <svg class="icon icon__bag" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path
+                            d="M15.625 15.9792V13.9583C15.625 9.27083 19.3958 4.66667 24.0833 4.22917C29.6667 3.6875 34.375 8.08334 34.375 13.5625V16.4375"
+                            stroke="#121212" stroke-width="1.37086" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M18.75 45.8333H31.25C39.625 45.8333 41.125 42.4792 41.5625 38.3958L43.125 25.8958C43.6875 20.8125 42.2292 16.6667 33.3333 16.6667H16.6667C7.77084 16.6667 6.31251 20.8125 6.87501 25.8958L8.43751 38.3958C8.87501 42.4792 10.375 45.8333 18.75 45.8333Z"
+                            stroke="#121212" stroke-width="1.37086" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M32.2823 25H32.301" stroke="#292D32" stroke-width="2.44796" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M17.6969 25H17.7156" stroke="#292D32" stroke-width="2.44796" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </a>
+
+                <a class="btnProfile" href="#" aria-label="Profile">
+                    <svg class="icon icon__profile" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path
+                            d="M25.3333 22.6458C25.125 22.625 24.875 22.625 24.6458 22.6458C19.6875 22.4792 15.75 18.4167 15.75 13.4167C15.75 8.3125 19.875 4.16666 25 4.16666C30.1042 4.16666 34.25 8.3125 34.25 13.4167C34.2292 18.4167 30.2917 22.4792 25.3333 22.6458Z"
+                            stroke="#121212" stroke-width="1.37086" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M14.9166 30.3333C9.87496 33.7083 9.87496 39.2083 14.9166 42.5625C20.6458 46.3958 30.0416 46.3958 35.7708 42.5625C40.8125 39.1875 40.8125 33.6875 35.7708 30.3333C30.0625 26.5208 20.6666 26.5208 14.9166 30.3333Z"
+                            stroke="#121212" stroke-width="1.37086" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero-section">
+                <div class="hero-section__info">
+                    <h2 class="hero-section__title">
+                        <span class="hero-section__title_line-top">Glow Beyond</span> 
+                        <span class="hero-section__title_line-bottom">Expectations</span>
+                    </h2>
+
+                    <p class="hero-section__text">Clean, effective, and cruelty-free skincare made to deliver visible results.</p>
+
+                    <a class="hero-section__goCatalog"
+                        href="./catalog.html" 
+                        target="_self"
+                    >
+                        Shop Now
+                    </a>
+                </div>
+                <img class="hero-section__logo" src="./img/Xtragleam-pink.svg" alt="" loading="lazy">
+                <img class="hero-section__imgProduct" src="./img/creams.svg" alt="" loading="lazy">
+            </section>
+
+            <section class="advantages-section" id="about">
+                <h3 class="advantages-section__title">
+                    Why Choose Xtragleam?
+                </h3>
+                <div class="advantages-section__info">
+                    <img class="advantages-section__img" src="./img/face.png" alt="Face with acne" loading="lazy" width="559" height="427">
+                    <article>
+                        <h4 class="advantages-section__subtitle">Struggling with acne issues?</h4>
+                        <p>
+                            At Xtragleam Skincare, we understand how frustrating acne can be, and we’re here to help you regain
+                            confidence in your
+                            skin. Our carefully designed recovery process targets acne at its root while soothing and nourishing your
+                            skin for
+                            long-term health.
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="reviews-section" id="reviews">
+                <h3 class="reviews-section__title">
+                    Reviews
+                </h3>
+                <div class="reviews-section__viewport">
+                    <div class="reviews-section__slider">
+                        <article class="reviews-section__slide">
+                            <img class="reviews-section__slideIMG" src="./img/photo1.jpg" alt="Buyer's avatar" loading="lazy" width="100" height="100">
+                            <h4 class="reviews-section__slideSubtitle">2 weeks of using Glow Serum</h4>
+                            <p>
+                                <q>After 2 weeks of using Xtragleam, my skin has never felt smoother. Thank you!</q> <br>
+                                <span class="reviews-section__nameAutor">– James, Verified Buyer</span>
+                            </p>
+                        </article>
+
+                        <article class="reviews-section__slide">
+                            <img class="reviews-section__slideIMG" src="./img/photo2.jpg" alt="Buyer's avatar" loading="lazy" width="100" height="100">
+                            <h4 class="reviews-section__slideSubtitle">Game Changer</h4>
+                            <p> 
+                                <q>The Glow Serum is a game-changer. My dark spots faded within weeks, and my skin feels so hydrated!</q> <br>
+                                <span class="reviews-section__nameAutor">– Emma L., Verified Buyer</span>
+                            </p>
+                        </article>
+
+                        <article class="reviews-section__slide">
+                            <img class="reviews-section__slideIMG" src="./img/photo3.jpg" alt="Buyer's avatar" loading="lazy" width="100" height="100">
+                            <h4 class="reviews-section__slideSubtitle">More Confident</h4>
+                            <p>
+                                <q>I’ve struggled with acne for years, but Xtragleam changed everything! My skin is glowing, and I’ve never felt more confident.</q> <br>
+                                <span class="reviews-section__nameAutor">– Sarah A., Verified Buyer</span>
+                            </p>
+                        </article>
+
+                        <article class="reviews-section__slide">
+                            <img class="reviews-section__slideIMG" src="./img/photo4.jpg" alt="Buyer's avatar" loading="lazy" width="100" height="100">
+                            <h4 class="reviews-section__slideSubtitle">More Confident</h4>
+                            <p>
+                                <q>I honestly thought I'd never get rid of my acne, but Xtragleam was a total game-changer! My complexion is literally
+                                radiant, and it has given me such a massive confidence boost.</q> <br>
+                                <span class="reviews-section__nameAutor">– Sarah A., Verified Buyer</span>
+                            </p>
+                        </article>
+
+                        <article class="reviews-section__slide">
+                            <img class="reviews-section__slideIMG" src="./img/photo5.jpg" alt="Buyer's avatar" loading="lazy" width="100" height="100">
+                            <h4 class="reviews-section__slideSubtitle">Dermatologist Recommendation</h4>
+                            <p>
+                                <q>As a dermatologist, I recommend Xtragleam to my clients for its effective, natural ingredients.</q> <br>
+                                <span class="reviews-section__nameAutor">– Dr. Jane O., Dermatologist</span>
+                            </p>
+                        </article>
+
+                        <article class="reviews-section__slide">
+                            <img class="reviews-section__slideIMG" src="./img/photo6.jpg" alt="Buyer's avatar" loading="lazy" width="100" height="100">
+                            <h4 class="reviews-section__slideSubtitle">Beauty Influencer</h4>
+                            <p>
+                                <q>Xtragleam is my go-to for glowing skin before events!</q> <br>
+                                <span class="reviews-section__nameAutor">– SkincareGuru, Beauty Influencer</span>
+                            </p>
+                        </article>
+                    </div>
+                </div>
+                <div class="reviews-section__buttons">
+                    <!-- Спрайт: невидимый склад иконок (они скрыты, и дважды переиспользуется ниже) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="visually-hidden" aria-hidden="true">
+                        <!-- <symbol> — трафарет в ящике. Сам по себе не рисунок, но по нему можно обводить -->
+                        <symbol id="icon-arrow-slider" viewBox="0 0 128 128">
+                            <path fill="currentColor" d="M64,0a64,64,0,1,0,64,64A64.07,64.07,0,0,0,64,0Zm0,122a58,58,0,1,1,58-58A58.07,58.07,0,0,1,64,122Z" />
+                            <path fill="currentColor" d="M74.12,35.88a3,3,0,0,0-4.24,0l-26,26a3,3,0,0,0,0,4.24l26,26a3,3,0,0,0,4.24-4.24L50.24,64,74.12,40.12A3,3,0,0,0,74.12,35.88Z" />
+                        </symbol>
+                    </svg>
+
+                    <!-- Использование спрайта через тег use -->
+                    <button class="reviews-section__btn" type="button" title="back">
+                        <svg class="reviews-section__arrowSlider_toleft" width="50" height="50" aria-hidden="true">
+                            <use href="#icon-arrow-slider"></use>
+                        </svg>
+                    </button>
+                    <button class="reviews-section__btn" type="button" title="forward">
+                        <svg class="reviews-section__arrowSlider_toright" width="50" height="50" aria-hidden="true">
+                            <use href="#icon-arrow-slider"></use>
+                        </svg>
+                    </button>
+                </div>
+            </section>
+
+            <section class="radiant-skin-section">
+                <div class="radiant-skin__info">
+                    <h3 class="radiant-skin__title">
+                        Your Guide to Radiant Skin
+                    </h3>
+                    <article>
+                        <h4 class="radiant-skin__subtitle">5 Mistakes That Might Be Hurting Your Skin</h4>
+                        <p>
+                            Your skincare routine plays a crucial role in maintaining healthy, radiant skin. However, some common habits might be
+                            doing more harm than good. Here are five mistakes to avoid:
+                        </p>
+                        <p>1. Overwashing Your Face Washing too often or using harsh cleansers can strip...</p>
+                    </article>
+                    <a
+                        class="radiant-skin__goArticles"
+                        href="#"
+                        target="_blank"
+                    >
+                        Read More Blog Post
+                    </a>
+                </div>
+                <img class="radiant-skin__img" src="./img/RadiantSkin.jpg" alt="Smiling girl" loading="lazy" width="588" height="728">
+            </section>
+        </main>
+    </div>
+    <footer>
+        <div class="container-footer">
+            <div class="container-footer__links">
+                <a class="logo" href="https://guzalliiar.github.io/rsschool-landing-page/" target="_self">
+                    <img class="logo__img" src="./icon/logo-light.svg" alt="Logo" loading="lazy" width="54" height="58">
+                    <span class="logo__title_inFooter">
+                        <span class="logo__title_font1">trag</span><span class="logo__title_font2">leam</span>
+                    </span>
+                </a>
+                <div class="social-media">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+                        <img src="./icon/instagram.svg" alt="Instagram icon" width="50" height="50">
+                    </a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+                        <img src="./icon/facebook.svg" alt="Facebook icon" width="50" height="50">
+                    </a>
+                    <a href="https://web.telegram.org/" target="_blank" rel="noopener">
+                        <img src="./icon/telegram.svg" alt="Telegram icon" width="50" height="50">
+                    </a>
+                </div>
+            </div>
+            <section class="contacts-section" id="contacts">
+                <h3 class="contacts-section__title">Contacts</h3>
+                <ul class="contacts-section__list">
+                    <li class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.6663 8.33329C16.6663 12.0152 9.99967 18.3333 9.99967 18.3333C9.99967 18.3333 3.33301 12.0152 3.33301 8.33329C3.33301 4.65139 6.31778 1.66663 9.99967 1.66663C13.6816 1.66663 16.6663 4.65139 16.6663 8.33329Z"
+                                stroke="#E1D4C9" stroke-width="1.5" />
+                            <path
+                                d="M10.0003 9.16667C10.4606 9.16667 10.8337 8.79357 10.8337 8.33333C10.8337 7.8731 10.4606 7.5 10.0003 7.5C9.54009 7.5 9.16699 7.8731 9.16699 8.33333C9.16699 8.79357 9.54009 9.16667 10.0003 9.16667Z"
+                                fill="#E1D4C9" stroke="#E1D4C9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                        <a href="https://www.google.com/maps/search/?api=1&query=8558+Green+Rd.,+LA" target="_blank" rel="noopener">8558 Green Rd., LA</a>
+                    </li>
+                    <li class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M15.0984 12.2516L11.6665 12.9166C9.34845 11.7531 7.91654 10.4166 7.08321 8.33329L7.72483 4.89154L6.51197 1.66663L3.72946 1.66663C2.60191 1.66663 1.71466 2.59958 1.90108 3.71161C2.29888 6.08454 3.37231 10.0391 6.24987 12.9166C9.27338 15.9401 13.5661 17.3318 16.1378 17.9288C17.299 18.1983 18.3332 17.2908 18.3332 16.0988L18.3332 13.4843L15.0984 12.2516Z"
+                                stroke="#E1D4C9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                        <a href="tel:+16035550123">+1 (603) 555-0123</a>
+                    </li>
+                    <li class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_217_1736)">
+                                <path d="M10 5L10 10L15 10" stroke="#E1D4C9" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M10.0003 18.3333C14.6027 18.3333 18.3337 14.6023 18.3337 9.99996C18.3337 5.39759 14.6027 1.66663 10.0003 1.66663C5.39795 1.66663 1.66699 5.39759 1.66699 9.99996C1.66699 14.6023 5.39795 18.3333 10.0003 18.3333Z"
+                                    stroke="#E1D4C9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_217_1736">
+                                    <rect width="20" height="20" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+                        <span>Mon-Sat: <time datetime="09:00">9:00 AM</time> – <time datetime="23:00">23:00 PM</time></span>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </footer>
+
+    <script src="./main.js" defer></script>
+</body>
+</html>
