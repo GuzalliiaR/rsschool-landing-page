@@ -852,16 +852,22 @@ footer section {
     border-bottom-right-radius: 10px;
 }
 
+/* Если у блока .catalog-grid нет класса .is-collapsed, то кнопку .moreCards-btn не отображать*/
 .moreCards-btn {
+    display: none;
+}
+
+/*~ - это селектор последующего сиблинга (находит все элементы .moreCards-btn на том же уровне вложенности, что и .catalog-grid.is-collapsed и идущие после него в разметке; сво-ва применяются к .moreCards-btn)*/
+.catalog-grid.is-collapsed~.moreCards-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
     border: none;
     padding: 10px 15px;
     background-color: var(--color-bg);
     transform: scale(1);
     transition: transform var(--transition-duration) ease;
-    
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .moreCards-btn::after {
@@ -890,6 +896,9 @@ footer section {
     transform: scale(1);
 }
 
+.catalog-grid.is-collapsed .card:nth-child(n+7) {
+    display: none;
+}
 
 
 
@@ -926,6 +935,10 @@ footer section {
     .catalog-grid {
         grid-template-columns: repeat(2, 413px);
         gap: 30px;
+    }
+
+    .catalog-grid.is-collapsed .card:nth-child(n+5) {
+        display: none;
     }
 }
 
@@ -1347,5 +1360,9 @@ footer section {
 
         border: 0.8px solid var(--color-cards);
         border-radius: 9px;
+    }
+
+    .catalog-grid.is-collapsed .card:nth-child(n+4) {
+        display: none;
     }
 }

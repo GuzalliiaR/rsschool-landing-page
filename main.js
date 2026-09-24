@@ -1,13 +1,11 @@
+// 1. Переключение темы dark light --------------------------------------------------------
+
 const buttonThemeToggle = document.getElementById('theme-toggle');
 const THEME_KEY = 'theme';
 
 function applyTheme(theme) { 
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem(THEME_KEY, theme);
-
-    // запись в кнопку атрибут aria-pressed со значением true или false (если =false, то кнопка выкл, если =true, то вкл)
-    // выкл = 'light' тема, вкл = 'dark' тема
-    buttonThemeToggle.setAttribute('aria-pressed', theme === 'dark');
 };
 
 applyTheme(localStorage.getItem(THEME_KEY) || 'light');
@@ -19,3 +17,30 @@ buttonThemeToggle.addEventListener('click', () => {
 
     applyTheme(nextTheme);
 });
+
+
+
+// 2. Управление отображением количества элементов в каталоге -----------------------------------
+
+const buttonMoreCards = document.getElementById('moreCards-btn');
+const catalog = document.getElementById('catalog');
+
+function isCollapsed() {
+    const countOfCards = catalog.querySelectorAll('.card');
+    const widthWindow = window.innerWidth;
+
+    if (widthWindow > 1320 && countOfCards.length > 6) return true;
+    if (widthWindow <= 1320 && countOfCards.length > 600 && countOfCards > 4) return true;
+    if (widthWindow <= 600 && countOfCards.length > 3) return true;
+
+    return false;
+}
+
+if (isCollapsed()) {
+    catalog.classList.add('is-collapsed')
+}
+
+buttonMoreCards.addEventListener('click', () => {
+    catalog.classList.remove('is-collapsed');
+});
+
