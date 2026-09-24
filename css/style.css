@@ -472,6 +472,7 @@ footer section {
     height: auto;
     border: none;
     padding: 0;
+    background-color: var(--color-bg);
 }
 
 .header__actions img {
@@ -496,6 +497,10 @@ footer section {
 .burger {
     display: none;
     height: 40px;
+}
+
+.burgert__img {
+    display: block;
 }
 
 .hero-section {
