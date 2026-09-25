@@ -108,8 +108,18 @@
                     <button class="category-btn" type="button" data-filter="body">For body</button>
                 </nav>
 
+                <template id="card-template">
+                    <article class="card">
+                        <img src="" alt="">
+                        <div class="card__description">
+                            <h4 class="card__subtitle"></h4>
+                            <p><span class="size-default"></span> / &dollar;<span class="price"></span></p>
+                        </div>
+                    </article>
+                </template>
+
                 <div class="catalog-grid" id="catalog">
-                    <article class="card" data-category="body">
+                    <!-- <article class="card" data-category="body">
                         <img src="./img/catalog/X5ExtremeBodyLotion.png" alt="Photo X5 Extreme Body Lotion" width="238" height="214">
                         <div class="card__description">
                             <h4 class="card__subtitle">X5 Extreme Body Lotion</h4>
@@ -174,7 +184,7 @@
                             <h4 class="card__subtitle">Extra-moisturizing coconut oil</h4>
                             <p>250 ml / <span class="price">&dollar;20.00</span></p>
                         </div>
-                    </article>
+                    </article> -->
                 </div>
             
                 <button class="moreCards-btn" id="moreCards-btn" type="button">Show More</button>

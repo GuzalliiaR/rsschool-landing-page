@@ -1,0 +1,89 @@
+[
+    {
+        "name": "X5 Extreme Body Lotion",
+        "category": "body",
+        "price": "15.00",
+        "sizeDefault": "300 ml",
+        "imgSrc": "./img/catalog/X5ExtremeBodyLotion.png",
+        "width": "238",
+        "height": "214",
+        "description": "Five intensive moisturizers in one fast-absorbing formula. Restores dry, tired skin from morning to night without a greasy after-feel."
+    },
+
+    {
+        "name": "AHA Face Toner",
+        "category": "face",
+        "price": "10.00",
+        "sizeDefault": "250 ml",
+        "imgSrc": "./img/catalog/AHAFaceToner.png",
+        "width": "86",
+        "height": "268",
+        "description": "A gentle exfoliating toner with alpha-hydroxy acids that sweeps away dead cells, tightens pores, and leaves skin visibly smoother after the first use."
+    },
+
+    {
+        "name": "Anti Strecthmark Oil",
+        "category": "body",
+        "price": "25.00",
+        "sizeDefault": "250 ml",
+        "imgSrc": "./img/catalog/AntiStrecthmarkOil.png",
+        "width": "78",
+        "height": "227",
+        "description": "A nourishing blend of plant oils that improves skin elasticity and softens the look of stretch marks. Ideal during pregnancy and after weight changes."
+    },
+
+    {
+        "name": "Acne Serum",
+        "category": "body face",
+        "price": "12.00",
+        "sizeDefault": "50 ml",
+        "imgSrc": "./img/catalog/AcneSerum.png",
+        "width": "136",
+        "height": "255",
+        "description": "A lightweight, targeted serum that calms breakouts, reduces redness, and helps prevent new blemishes — without drying out your skin."
+    },
+
+    {
+        "name": "Luminous Body Lotion",
+        "category": "body",
+        "price": "17.00",
+        "sizeDefault": "500 ml",
+        "imgSrc": "./img/catalog/LuminousBodyLotion.png",
+        "width": "107",
+        "height": "246",
+        "description": "A generous-size lotion with a subtle glow effect. Deeply hydrates while giving your skin a soft, healthy radiance you can see in daylight."
+    },
+
+    {
+        "name": "Skin Glow Moisturizing Lotion",
+        "category": "body face",
+        "price": "20.00",
+        "sizeDefault": "400 ml",
+        "imgSrc": "./img/catalog/SkinGlowMoisturizingLotion.png",
+        "width": "162",
+        "height": "268",
+        "description": "Everyday hydration with a silky texture that sinks in instantly. Skin feels plump, smooth, and comfortably moisturized for hours."
+    },
+
+    {
+        "name": "X5 Extreme Vitamin C Face Cream",
+        "category": "face",
+        "price": "10.00",
+        "sizeDefault": "50 ml",
+        "imgSrc": "./img/catalog/X5ExtremeVitaminCFaceCream.png",
+        "width": "238",
+        "height": "214",
+        "description": "Brightens dull skin with a daily dose of vitamin C. Helps even out tone, boosts radiance, and protects against early signs of aging."
+    },
+
+    {
+        "name": "Extra-moisturizing Coconut oil",
+        "category": "body face",
+        "price": "20.00",
+        "sizeDefault": "250 ml",
+        "imgSrc": "./img/catalog/Extra-moisturizingKosovaroil.png",
+        "width": "78",
+        "height": "227",
+        "description": "Cold-pressed coconut oil for deep, multi-purpose care — body, hair, and nails. Rich in fatty acids that lock in moisture and leave skin incredibly soft."
+    }
+]
