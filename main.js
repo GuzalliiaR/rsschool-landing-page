@@ -26,20 +26,22 @@ const buttonMoreCards = document.getElementById('moreCards-btn');
 const catalog = document.getElementById('catalog');
 
 function isCollapsed() {
-    const countOfCards = catalog.querySelectorAll('.card');
+    const cards = catalog.querySelectorAll('.card');
     const widthWindow = window.innerWidth;
 
-    if (widthWindow > 1320 && countOfCards.length > 6) return true;
-    if (widthWindow <= 1320 && countOfCards.length > 600 && countOfCards > 4) return true;
-    if (widthWindow <= 600 && countOfCards.length > 3) return true;
-
+    if (widthWindow <= 600 && cards.length > 3) return true;
+    if (widthWindow <= 1320 && cards.length > 4) return true;
+    if (widthWindow > 1320 && cards.length > 6) return true;
+    
     return false;
 }
 
 function showButtonMoreCards() {
     if (isCollapsed()) {
         catalog.classList.add('is-collapsed');
-    }
+    } else {
+        catalog.classList.remove('is-collapsed');
+    };
 };
 
 buttonMoreCards.addEventListener('click', () => {
@@ -65,48 +67,73 @@ async function fetchProducts(API_URL) {
 
 // Логика рендера карточек в каталоге (catalog.js)
 const API_URL = './products.json';
+let allProducts = null;
 
-async function renderCatalog() {
-    const templateCard = document.getElementById('card-template');
-    const catalog = document.getElementById('catalog');
-
+async function getCatalog() {
     try {
         const products = await fetchProducts(API_URL);
-
-        products.forEach(product => {
-            const fragment = templateCard.content.cloneNode(true);
-
-            const article = fragment.querySelector('.card');
-            article.dataset.category = product.category;
-
-            const img = fragment.querySelector('.card img');
-            img.src = product.imgSrc;
-            img.alt = "Photo ".concat(product.name);
-            img.width = product.width;
-            img.height = product.height;
-
-            const cardTitle = fragment.querySelector('.card h4');
-            cardTitle.textContent = product.name;
-
-            const size = fragment.querySelector('.card .size-default');
-            size.textContent = product.sizeDefault;
-
-            const price = fragment.querySelector('.card .price');
-            price.textContent = product.price;
-
-            catalog.appendChild(fragment);
-        });
-
-        showButtonMoreCards();
+        return products;
 
     } catch (error) {
         console.log(error);
-        catalog.innerHTML = '<p>Не удалось загрузить каталог</p>';
+        return null;
     }
 };
 
+function renderCatalog(category) {
+    const templateCard = document.getElementById('card-template');
+    const catalog = document.getElementById('catalog');
 
-renderCatalog();
+    if (!Array.isArray(allProducts)) return;
+
+    const filteredProducts = category === 'all'
+        ? allProducts
+        : allProducts.filter(product => product.category.split(' ').includes(category));
+
+    catalog.innerHTML = '';
+
+    filteredProducts.forEach(product => {
+        const fragment = templateCard.content.cloneNode(true);
+
+        const article = fragment.querySelector('.card');
+        article.dataset.category = product.category;
+
+        const img = fragment.querySelector('.card img');
+        img.src = product.imgSrc;
+        img.alt = "Photo ".concat(product.name);
+        img.width = product.width;
+        img.height = product.height;
+
+        const cardTitle = fragment.querySelector('.card h4');
+        cardTitle.textContent = product.name;
+
+        const size = fragment.querySelector('.card .size-default');
+        size.textContent = product.sizeDefault;
+
+        const price = fragment.querySelector('.card .price');
+        price.textContent = product.price;
+
+        catalog.appendChild(fragment);
+    });
+
+    showButtonMoreCards();
+};
+
+async function initialRenderCatalog() {
+    const catalog = document.getElementById('catalog');
+
+    allProducts = await getCatalog();
+
+    if (!Array.isArray(allProducts)) {
+        catalog.innerHTML = '<p>Не удалось загрузить каталог</p>';
+        return;
+    }
+
+    renderCatalog('all');
+};
+
+initialRenderCatalog();
+
 
 
 
@@ -120,8 +147,19 @@ buttonsChoiceCategory.forEach((button) => {
         buttonsChoiceCategory.forEach(button => button.classList.remove('active'));
         button.classList.add('active');
 
-        // Здесь можно делать действия после клика по кнопке категории
+        const category = button.dataset.filter;
+        renderCatalog(category);
     });
-})
+});
 
-console.log(buttonsChoiceCategory);
+
+
+// 5. Пересчет логики отображения каталога при изменении размера окна
+let resizeTimer;
+
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        if (catalog.querySelector('.card')) showButtonMoreCards();
+    }, 200);
+});
