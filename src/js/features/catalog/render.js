@@ -15,6 +15,9 @@ export function catalogRenderer(catalog, templateCard, showButtonMoreCards) {
         filteredProducts.forEach(product => {
             const fragment = templateCard.content.cloneNode(true);
 
+            const article = fragment.querySelector('.card');
+            article.dataset.cardName = product.name;
+
             const img = fragment.querySelector('.card img');
             img.src = product.imgSrc;
             img.alt = "Photo ".concat(product.name);
@@ -47,5 +50,9 @@ export function catalogRenderer(catalog, templateCard, showButtonMoreCards) {
         renderCatalog('all');
     }
 
-    return { renderCatalog, initialRender };
+    function getProducts() {
+        return allProducts;
+    };
+
+    return { renderCatalog, initialRender, getProducts };
 }

@@ -7,7 +7,46 @@
         "imgSrc": "./img/catalog/X5ExtremeBodyLotion.png",
         "width": "238",
         "height": "214",
-        "description": "Five intensive moisturizers in one fast-absorbing formula. Restores dry, tired skin from morning to night without a greasy after-feel."
+        "description": "Five intensive moisturizers in one fast-absorbing formula. Restores dry, tired skin from morning to night without a greasy after-feel.",
+        "sizes": [
+            {
+                "size": "200 ml",
+                "addPrice": "-3.00"
+            },
+            {
+                "size": "300 ml",
+                "addPrice": "0.00"
+            },
+            {
+                "size": "350 ml",
+                "addPrice": "2.00"
+            }
+        ],
+        "skinType": [
+            {
+                "type": "Normal",
+                "addPrice": "0.00"
+            },
+            {
+                "type": "Oily",
+                "addPrice": "0.50"
+            },
+            {
+                "type": "Dry",
+                "addPrice": "1.00"
+            }
+        ],
+        "fragrance": [
+           {
+                "nameFragrance": "With fragrance",
+                "addPrice": "0.00"
+            },
+            {
+                "nameFragrance": "Without fragrance",
+                "addPrice": "1.00"
+            }
+        ]
+        
     },
 
     {
@@ -18,7 +57,45 @@
         "imgSrc": "./img/catalog/AHAFaceToner.png",
         "width": "86",
         "height": "268",
-        "description": "A gentle exfoliating toner with alpha-hydroxy acids that sweeps away dead cells, tightens pores, and leaves skin visibly smoother after the first use."
+        "description": "A gentle exfoliating toner with alpha-hydroxy acids that sweeps away dead cells, tightens pores, and leaves skin visibly smoother after the first use.",
+        "sizes": [
+            {
+                "size": "200 ml",
+                "addPrice": "-2.00"
+            },
+            {
+                "size": "250 ml",
+                "addPrice": "0.00"
+            },
+            {
+                "size": "300 ml",
+                "addPrice": "2.00"
+            }
+        ],
+        "skinType": [
+            {
+                "type": "Normal",
+                "addPrice": "0.00"
+            },
+            {
+                "type": "Oily",
+                "addPrice": "0.00"
+            },
+            {
+                "type": "Dry",
+                "addPrice": "0.00"
+            }
+        ],
+        "fragrance": [
+            {
+                "nameFragrance": "With fragrance",
+                "addPrice": "0.00"
+            },
+            {
+                "nameFragrance": "Without fragrance",
+                "addPrice": "1.00"
+            }
+        ]
     },
 
     {
@@ -29,7 +106,45 @@
         "imgSrc": "./img/catalog/AntiStrecthmarkOil.png",
         "width": "78",
         "height": "227",
-        "description": "A nourishing blend of plant oils that improves skin elasticity and softens the look of stretch marks. Ideal during pregnancy and after weight changes."
+        "description": "A nourishing blend of plant oils that improves skin elasticity and softens the look of stretch marks. Ideal during pregnancy and after weight changes.",
+        "sizes": [
+            {
+                "size": "200 ml",
+                "addPrice": "-6.00"
+            },
+            {
+                "size": "250 ml",
+                "addPrice": "0.00"
+            },
+            {
+                "size": "300 ml",
+                "addPrice": "3.00"
+            }
+        ],
+        "skinType": [
+            {
+                "type": "Normal",
+                "addPrice": "0.00"
+            },
+            {
+                "type": "Oily",
+                "addPrice": "0.00"
+            },
+            {
+                "type": "Dry",
+                "addPrice": "0.00"
+            }
+        ],
+        "fragrance": [
+            {
+                "nameFragrance": "With fragrance",
+                "addPrice": "0.00"
+            },
+            {
+                "nameFragrance": "Without fragrance",
+                "addPrice": "1.00"
+            }
+        ]
     },
 
     {
@@ -40,7 +155,41 @@
         "imgSrc": "./img/catalog/AcneSerum.png",
         "width": "136",
         "height": "255",
-        "description": "A lightweight, targeted serum that calms breakouts, reduces redness, and helps prevent new blemishes — without drying out your skin."
+        "description": "A lightweight, targeted serum that calms breakouts, reduces redness, and helps prevent new blemishes — without drying out your skin.",
+        "sizes": [
+            {
+                "size": "50 ml",
+                "addPrice": "0.00"
+            },
+            {
+                "size": "80 ml",
+                "addPrice": "4.00"
+            }
+        ],
+        "skinType": [
+            {
+                "type": "Normal",
+                "addPrice": "0.00"
+            },
+            {
+                "type": "Oily",
+                "addPrice": "0.50"
+            },
+            {
+                "type": "Dry",
+                "addPrice": "1.00"
+            }
+        ],
+        "fragrance": [
+            {
+                "nameFragrance": "With fragrance",
+                "addPrice": "0.00"
+            },
+            {
+                "nameFragrance": "Without fragrance",
+                "addPrice": "1.00"
+            }
+        ]
     },
 
     {
@@ -51,7 +200,41 @@
         "imgSrc": "./img/catalog/LuminousBodyLotion.png",
         "width": "107",
         "height": "246",
-        "description": "A generous-size lotion with a subtle glow effect. Deeply hydrates while giving your skin a soft, healthy radiance you can see in daylight."
+        "description": "A generous-size lotion with a subtle glow effect. Deeply hydrates while giving your skin a soft, healthy radiance you can see in daylight.",
+        "sizes": [
+            {
+                "size": "300 ml",
+                "addPrice": "-7.00"
+            },
+            {
+                "size": "500 ml",
+                "addPrice": "0.00"
+            }
+        ],
+        "skinType": [
+            {
+                "type": "Normal",
+                "addPrice": "0.00"
+            },
+            {
+                "type": "Oily",
+                "addPrice": "0.00"
+            },
+            {
+                "type": "Dry",
+                "addPrice": "0.00"
+            }
+        ],
+        "fragrance": [
+            {
+                "nameFragrance": "With fragrance",
+                "addPrice": "0.00"
+            },
+            {
+                "nameFragrance": "Without fragrance",
+                "addPrice": "1.00"
+            }
+        ]
     },
 
     {
@@ -62,7 +245,45 @@
         "imgSrc": "./img/catalog/SkinGlowMoisturizingLotion.png",
         "width": "162",
         "height": "268",
-        "description": "Everyday hydration with a silky texture that sinks in instantly. Skin feels plump, smooth, and comfortably moisturized for hours."
+        "description": "Everyday hydration with a silky texture that sinks in instantly. Skin feels plump, smooth, and comfortably moisturized for hours.",
+        "sizes": [
+            {
+                "size": "250 ml",
+                "addPrice": "-8.00"
+            },
+            {
+                "size": "400 ml",
+                "addPrice": "0.00"
+            },
+            {
+                "size": "550 ml",
+                "addPrice": "6.00"
+            }
+        ],
+        "skinType": [
+            {
+                "type": "Normal",
+                "addPrice": "0.00"
+            },
+            {
+                "type": "Oily",
+                "addPrice": "0.00"
+            },
+            {
+                "type": "Dry",
+                "addPrice": "0.00"
+            }
+        ],
+        "fragrance": [
+            {
+                "nameFragrance": "With fragrance",
+                "addPrice": "0.00"
+            },
+            {
+                "nameFragrance": "Without fragrance",
+                "addPrice": "1.00"
+            }
+        ]
     },
 
     {
@@ -73,7 +294,41 @@
         "imgSrc": "./img/catalog/X5ExtremeVitaminCFaceCream.png",
         "width": "238",
         "height": "214",
-        "description": "Brightens dull skin with a daily dose of vitamin C. Helps even out tone, boosts radiance, and protects against early signs of aging."
+        "description": "Brightens dull skin with a daily dose of vitamin C. Helps even out tone, boosts radiance, and protects against early signs of aging.",
+        "sizes": [
+            {
+                "size": "50 ml",
+                "addPrice": "0.00"
+            },
+            {
+                "size": "80 ml",
+                "addPrice": "3.50"
+            }
+        ],
+        "skinType": [
+            {
+                "type": "Normal",
+                "addPrice": "0.00"
+            },
+            {
+                "type": "Oily",
+                "addPrice": "0.50"
+            },
+            {
+                "type": "Dry",
+                "addPrice": "1.00"
+            }
+        ],
+        "fragrance": [
+            {
+                "nameFragrance": "With fragrance",
+                "addPrice": "0.00"
+            },
+            {
+                "nameFragrance": "Without fragrance",
+                "addPrice": "1.00"
+            }
+        ]
     },
 
     {
@@ -84,6 +339,44 @@
         "imgSrc": "./img/catalog/Extra-moisturizingKosovaroil.png",
         "width": "78",
         "height": "227",
-        "description": "Cold-pressed coconut oil for deep, multi-purpose care — body, hair, and nails. Rich in fatty acids that lock in moisture and leave skin incredibly soft."
+        "description": "Cold-pressed coconut oil for deep, multi-purpose care — body, hair, and nails. Rich in fatty acids that lock in moisture and leave skin incredibly soft.",
+        "sizes": [
+            {
+                "size": "150 ml",
+                "addPrice": "-7.00"
+            },
+            {
+                "size": "250 ml",
+                "addPrice": "0.00"
+            },
+            {
+                "size": "350 ml",
+                "addPrice": "5.00"
+            }
+        ],
+        "skinType": [
+            {
+                "type": "Normal",
+                "addPrice": "0.00"
+            },
+            {
+                "type": "Oily",
+                "addPrice": "0.00"
+            },
+            {
+                "type": "Dry",
+                "addPrice": "0.00"
+            }
+        ],
+        "fragrance": [
+            {
+                "nameFragrance": "With fragrance",
+                "addPrice": "0.00"
+            },
+            {
+                "nameFragrance": "Without fragrance",
+                "addPrice": "1.00"
+            }
+        ]
     }
 ]

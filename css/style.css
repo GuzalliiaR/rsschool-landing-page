@@ -392,7 +392,6 @@ footer ul a:hover {
     background-size: 100% 1px;
 }
 
-
 /* 4. Layout ← крупные блоки: container, grid, header, footer  */
 .container {
     max-width: calc(var(--container-width) + 2 * var(--container-padding-x));
@@ -436,6 +435,57 @@ footer {
 footer section {
     width: auto;
     margin-bottom: 0;
+}
+
+dialog {
+    border: none;
+    border-radius: 40px;
+    padding: 0;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5);
+    background-color: var(--color-bg);
+
+    /* allow-discrete — разрешает анимировать display/overlay */
+    /* allow-discrete в overlay — держит dialog в топовом слое (top layer) пока идёт анимация закрытия */
+    /* allow-discrete в display говорит браузеру: «подержи display: block пока идёт анимация, и переключи в none только в самом конце» */
+    opacity: 0;
+    transform: scale(0.8);
+    transition: 
+        opacity var(--transition-duration) ease-out,
+        transform var(--transition-duration) ease-out,
+        display var(--transition-duration) allow-discrete,
+        overlay var(--transition-duration) allow-discrete;
+}
+
+dialog[open] {
+    opacity: 1;
+    transform: scale(1);
+
+    /* стартовое состояние, с которого начинается появление */
+    /* Без @starting-style transition просто не запускается, потому что нет "начального кадра" */
+    @starting-style {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+body:has(dialog[open]) {
+    overflow: hidden;   /* Запрет на прокрутку в body, которого есть dialog с атрибутом open*/
+}
+
+dialog::backdrop {
+    background-color: rgb(0, 0, 0, 0);
+    transition: 
+        background-color var(--transition-duration) ease-out,
+        display var(--transition-duration) allow-discrete,
+        overlay var(--transition-duration) allow-discrete;
+}
+
+dialog[open]::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+
+    @starting-style {
+        background-color: rgb(0, 0, 0, 0);
+    }
 }
 
 
@@ -898,6 +948,12 @@ footer section {
 
 .catalog-grid.is-collapsed .card:nth-child(n+7) {
     display: none;
+}
+
+#modalCard .modalCard__content {
+    width: 800px;
+    height: 504px;
+    padding: 16px;
 }
 
 
