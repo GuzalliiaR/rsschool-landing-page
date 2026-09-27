@@ -341,6 +341,16 @@ footer h3 {
     font-size: 23px;
 }
 
+.modalCard__content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.modalCard__content h4 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
 a,
 button,
 input,
@@ -443,6 +453,9 @@ dialog {
     padding: 0;
     box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5);
     background-color: var(--color-bg);
+    color: var(--color-text-dark);
+    font-size: 20px;
+    line-height: 1.3em;
 
     /* allow-discrete — разрешает анимировать display/overlay */
     /* allow-discrete в overlay — держит dialog в топовом слое (top layer) пока идёт анимация закрытия */
@@ -950,10 +963,79 @@ dialog[open]::backdrop {
     display: none;
 }
 
-#modalCard .modalCard__content {
-    width: 800px;
-    height: 504px;
+.modalCard__content {
+    display: flex;
+    align-items: flex-start;
+
+    width: min(800px, 90vw);
+    min-height: 504px;
+    max-height: 90vh;
+
     padding: 16px;
+    background-color: var(--color-gray-bg);
+}
+
+.modalCard__imgContent {
+    width: 100%;
+    max-width: 208px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.modalCard__img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.modalCard__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+
+    max-width: 560px;
+}
+
+.modalCard__choseSize,
+.modalCard__choseSkinType,
+.modalCard__choseSmell {
+    display: flex;
+    justify-content: start;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.modalCard__block button,
+#closeModalCardBtn {
+    line-height: 1.5em;
+    padding: 5px 15px;
+
+    border-radius: 72px;
+    border: 1px solid var(--color-btn);
+    background-color: var(--color-bg);
+
+    transform: scale(1);
+    transition: transform 0.1s ease;
+}
+
+.modalCard__block button:hover,
+#closeModalCardBtn:hover {
+    background-color: var(--color-btn);
+    color: var(--color-text-btn);
+}
+
+.modalCard__block button:active,
+#closeModalCardBtn:active {
+    transform: scale(0.9);
+}
+
+.modalCard__totalPrice {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
 }
 
 
@@ -1231,10 +1313,18 @@ dialog[open]::backdrop {
         margin-bottom: 20px;
     }
 
-
+        .modalCard__imgContent {
+            width: 100%;
+            max-width: 130px;
+    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
 }
 
-@media(max-width: 600px) {
+@media(max-width: 640px) {
     :root {
         --container-width: 350px;
     }
@@ -1417,6 +1507,14 @@ dialog[open]::backdrop {
     }
 
     .catalog-grid.is-collapsed .card:nth-child(n+4) {
+        display: none;
+    }
+
+    .modalCard__content {
+        width: min(500px, 80vw);
+    }
+
+    .modalCard__imgContent {
         display: none;
     }
 }
