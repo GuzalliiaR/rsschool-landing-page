@@ -260,49 +260,48 @@
         </div>
     </footer>
 
-    <dialog id="modalCard">
-        <template id="modalCard__template">
-            <div class="modalCard__content">
-                <div class="modalCard__imgContent">
-                    <img class="modalCard__img" src="" alt="">
-                </div>
-                
-                <div class="modalCard__info">
-                    <div class="modalCard__block">
-                        <h3 class="modalCard__title"></h3>
-                        <p class="modalCard__description"></p>
-                    </div>
-                    
-                    <div class="modalCard__block">
-                        <h4 class="modalCard__subtitl">Size</h4>
-                        <div class="modalCard__choseSize">
-                            <button class="btnSize visually-hidden" type="button"></button>
-                        </div>
-                    </div>
-
-                    <div class="modalCard__block">
-                        <h4 class="modalCard__subtitl">Skin type</h4>
-                        <div class="modalCard__choseSkinType">
-                            <button class="btnSkinType visually-hidden" type="button"></button>
-                        </div>
-                    </div>
-
-                    <div class="modalCard__block">
-                        <h4 class="modalCard__subtitl">Presence of fragrance</h4>
-                        <div class="modalCard__choseSmell">
-                            <button class="btnSmell visually-hidden" type="button"></button>
-                        </div>
-                    </div>
-                    
-                    <p class="modalCard__totalPrice">
-                        <span>Total:</span> <span>&dollar;<span class="price"></span></span>
-                    </p>
-
-                    <button id="closeModalCardBtn">Close</button>
-                </div>
+    <template id="modalCard__template">
+        <div class="modalCard__content">
+            <div class="modalCard__imgContent">
+                <img class="modalCard__img" src="" alt="">
             </div>
-        </template>
-    </dialog>
+
+            <div class="modalCard__info">
+                <div class="modalCard__block">
+                    <h3 class="modalCard__title"></h3>
+                    <p class="modalCard__description"></p>
+                </div>
+
+                <div class="modalCard__block">
+                    <h4 class="modalCard__subtitle">Size</h4>
+                    <div class="modalCard__choseSize">
+                        <button class="btnSize visually-hidden" type="button"></button>
+                    </div>
+                </div>
+
+                <div class="modalCard__block">
+                    <h4 class="modalCard__subtitle">Skin type</h4>
+                    <div class="modalCard__choseSkinType">
+                        <button class="btnSkinType visually-hidden" type="button"></button>
+                    </div>
+                </div>
+
+                <div class="modalCard__block">
+                    <h4 class="modalCard__subtitle">Presence of fragrance</h4>
+                    <div class="modalCard__choseSmell">
+                        <button class="btnSmell visually-hidden" type="button"></button>
+                    </div>
+                </div>
+
+                <p class="modalCard__totalPrice">
+                    <span>Total:</span> <span>&dollar;<span class="price"></span></span>
+                </p>
+
+                <button id="closeModalCardBtn" type="button">Close</button>
+            </div>
+        </div>
+    </template>
+    <dialog id="modalCard"></dialog>
 
     <script type="module" src="./src/js/pages/catalog.js"></script>
 </body>
