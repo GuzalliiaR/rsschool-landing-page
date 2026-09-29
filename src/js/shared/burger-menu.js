@@ -28,4 +28,12 @@ export function initBurgerMenu() {
     dialog.addEventListener('click', e => {
         if (e.target.closest('a')) closeMenu();
     });
+
+    const mediaQuery = window.matchMedia('(min-width: 1201px)');
+    // Отслеживание изменений размера экрана в реальном времени:
+    mediaQuery.addEventListener('change', e => {
+        if (e.matches) {
+            closeMenu();
+        }
+    });
 }
