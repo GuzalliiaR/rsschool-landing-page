@@ -270,6 +270,7 @@ svg * {
 
     --container-width: 1280px;
     --container-padding-x: 5px;
+    --header-height: 108px;
 
     --transition-duration: 0.3s;
 }
@@ -341,12 +342,23 @@ footer h3 {
     font-size: 23px;
 }
 
+.modalCard__content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.modalCard__content h4 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
 a,
 button,
 input,
 img,
 textarea,
 a svg,
+button svg,
 svg * {
     transition-duration: var(--transition-duration);
     color: currentColor;
@@ -372,7 +384,7 @@ header nav a {
     background-image: linear-gradient(currentColor, currentColor);
     background-size: 0 2px;    /*ширина градиента 0, высота градиента 2px*/
     background-repeat: no-repeat;
-    background-position: 50% 90%;   /*50% - центр по горизонтали родителя, 100% - низ по вертикали родителя*/
+    background-position: 50% 90%;   /*50% - центр по горизонтали родителя, 90% - почти низ по вертикали родителя*/
     transition: background-size var(--transition-duration) ease;
 }
 
@@ -384,14 +396,23 @@ footer ul a {
     transition: background-size var(--transition-duration) ease;
 }
 
-header nav a:hover {
+dialog nav ul.burger-menu a {
+    padding-bottom: 5px;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0 2px;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    transition: background-size var(--transition-duration) ease;
+}
+
+header nav a:hover,
+dialog nav ul.burger-menu a:hover {
     background-size: 100% 2px;
 }
 
 footer ul a:hover {
     background-size: 100% 1px;
 }
-
 
 /* 4. Layout ← крупные блоки: container, grid, header, footer  */
 .container {
@@ -436,6 +457,60 @@ footer {
 footer section {
     width: auto;
     margin-bottom: 0;
+}
+
+dialog {
+    border: none;
+    border-radius: 40px;
+    padding: 0;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5);
+    background-color: var(--color-bg);
+    color: var(--color-text-dark);
+    font-size: 20px;
+    line-height: 1.3em;
+
+    /* allow-discrete — разрешает анимировать display/overlay */
+    /* allow-discrete в overlay — держит dialog в топовом слое (top layer) пока идёт анимация закрытия */
+    /* allow-discrete в display говорит браузеру: «подержи display: block пока идёт анимация, и переключи в none только в самом конце» */
+    opacity: 0;
+    transform: scale(0.8);
+    transition: 
+        opacity var(--transition-duration) ease-out,
+        transform var(--transition-duration) ease-out,
+        display var(--transition-duration) allow-discrete,
+        overlay var(--transition-duration) allow-discrete;
+}
+
+dialog[open] {
+    opacity: 1;
+    transform: scale(1);
+
+    /* стартовое состояние, с которого начинается появление */
+    /* Без @starting-style transition просто не запускается, потому что нет "начального кадра" */
+    @starting-style {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+body:has(dialog[open]) {
+    overflow: hidden;   /* Запрет на прокрутку в body, которого есть dialog с атрибутом open*/
+}
+
+dialog::backdrop {
+    background-color: rgb(0, 0, 0, 0);
+    transition: 
+        background-color var(--transition-duration) ease-out,
+        display var(--transition-duration) allow-discrete,
+        overlay var(--transition-duration) allow-discrete;
+}
+
+dialog[open]::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+
+    @starting-style {
+        background-color: rgb(0, 0, 0, 0);
+    }
 }
 
 
@@ -494,12 +569,24 @@ footer section {
     display: block;
 }
 
-.burger {
+.burger__btn {
     display: none;
     height: 40px;
 }
 
-.burgert__img {
+.burger__img {
+    display: block;
+}
+
+.burger__icon--close {
+    display: none;
+}
+
+.burger__btn.is-active .burger__icon--open {
+    display: none;
+}
+
+.burger__btn.is-active .burger__icon--close {
     display: block;
 }
 
@@ -611,31 +698,37 @@ footer section {
 }
 
 .reviews-section {
-    padding: 50px 25px;
+    padding: 50px 40px;
     background-color: var(--color-gray-bg);
 }
 
 .reviews-section__title {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .reviews-section__viewport {
+    position: relative;
     overflow: hidden;
-    margin-bottom: 10px;
+    margin: auto;
 
-    width: 100%;
+    width: 60%;
 }
 
 .reviews-section__slider {
     display: flex;
-    align-items: start;
+    align-items: center;
     flex-wrap: nowrap;
-    column-gap: 15px;
+    transition: transform var(--transition-duration) ease-in-out;
 }
 
 .reviews-section__slide {
-    width: 450px;
+    width: 100%;
     flex-shrink: 0;    /*Запрет на уменьшение элемента внутри flex-контейнера */
+}
+
+.reviews-section__article {
+    width: 500px;
+    margin: auto;
     padding: 37px 20px;
     border-radius: 19px;
 
@@ -657,14 +750,24 @@ footer section {
 }
 
 .reviews-section__buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
     display: flex;
-    justify-content: center;
-    column-gap: 15px;
+    justify-content: space-between;
 }
 
 .reviews-section__btn {
+    height: 50px;
+    padding: 0;
+    border-radius: 50%;
     border: none;
     background-color: var(--color-gray-bg);
+}
+
+.reviews-section__btn:hover {
+    background-color: var(--color-btn);
+    color: var(--color-text-btn);
 }
 
 .reviews-section__arrowSlider_toright {
@@ -852,16 +955,22 @@ footer section {
     border-bottom-right-radius: 10px;
 }
 
+/* Если у блока .catalog-grid нет класса .is-collapsed, то кнопку .moreCards-btn не отображать*/
 .moreCards-btn {
+    display: none;
+}
+
+/*~ - это селектор последующего сиблинга (находит все элементы .moreCards-btn на том же уровне вложенности, что и .catalog-grid.is-collapsed и идущие после него в разметке; сво-ва применяются к .moreCards-btn)*/
+.catalog-grid.is-collapsed~.moreCards-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
     border: none;
     padding: 10px 15px;
     background-color: var(--color-bg);
     transform: scale(1);
     transition: transform var(--transition-duration) ease;
-    
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .moreCards-btn::after {
@@ -888,6 +997,137 @@ footer section {
 .moreCards-btn:hover::after {
     opacity: 1;
     transform: scale(1);
+}
+
+.catalog-grid.is-collapsed .card:nth-child(n+7) {
+    display: none;
+}
+
+.modalCard__content {
+    display: flex;
+    align-items: flex-start;
+
+    width: min(800px, 90vw);
+    min-height: 504px;
+    max-height: 90vh;
+
+    padding: 16px;
+    background-color: var(--color-gray-bg);
+}
+
+.modalCard__imgContent {
+    width: 100%;
+    max-width: 208px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.modalCard__img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.modalCard__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+
+    max-width: 560px;
+}
+
+.modalCard__choseSize,
+.modalCard__choseSkinType,
+.modalCard__choseSmell {
+    display: flex;
+    justify-content: start;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.modalCard__block button,
+#closeModalCardBtn {
+    line-height: 1.5em;
+    padding: 5px 15px;
+
+    border-radius: 72px;
+    border: 1px solid var(--color-btn);
+    background-color: var(--color-bg);
+
+    transform: scale(1);
+    transition: transform 0.1s ease;
+}
+
+.modalCard__block button:hover,
+#closeModalCardBtn:hover {
+    background-color: var(--color-btn);
+    color: var(--color-text-btn);
+}
+
+.modalCard__block button:active,
+#closeModalCardBtn:active {
+    transform: scale(0.9);
+}
+
+.modalCard__totalPrice {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+}
+
+.modalCard__block button.isActive {
+    background-color: var(--color-btn);
+    color: var(--color-text-btn);
+}
+
+.burger-menu__dialog {
+    position: fixed;
+    top: var(--header-height);
+    margin: 0;
+    padding: 60px 40px;
+    width: 100%;
+    z-index: 100;
+
+    max-width: none;
+    max-height: none;
+    border-radius: 0;
+    box-shadow: none;
+    overflow-y: auto;
+
+    opacity: 0;
+    transform: translateY(-16px);
+    transition: 
+        transform var(--transition-duration) ease-out,
+        opacity var(--transition-duration) ease-out,
+        display var(--transition-duration) allow-discrete;
+}
+
+.burger-menu__dialog[open] {
+    opacity: 1;
+    transform: translateY(0);
+
+    @starting-style {
+        opacity: 0;
+        transform: translateY(-16px);
+    }
+}
+
+.burger-menu__nav {
+    width: var(--container-width);
+    margin-inline: auto;
+}
+
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+}
+
+.burger-menu li {
+    text-align: center;
 }
 
 
@@ -927,6 +1167,10 @@ footer section {
         grid-template-columns: repeat(2, 413px);
         gap: 30px;
     }
+
+    .catalog-grid.is-collapsed .card:nth-child(n+5) {
+        display: none;
+    }
 }
 
 @media(max-width: 1200px) {
@@ -963,11 +1207,13 @@ footer section {
         margin-bottom: 70px;
     }
 
-    .header__nav {
+    .header__nav,
+    .btnBag,
+    .btnProfile {
         display: none;
     }
 
-    .burger {
+    .burger__btn {
         display: block;
     }
 
@@ -1003,18 +1249,27 @@ footer section {
         height: auto;
     }
 
-    .reviews-section__title {
-        margin-bottom: 30px;
+    .reviews-section__viewport {
+        width: 70%;
     }
 
-    .reviews-section__slide {
+    .reviews-section__title {
+        margin-bottom: 20px;
+    }
+
+    .reviews-section__article {
         width: 417px;
     }
 
     .reviews-section__arrowSlider_toleft,
     .reviews-section__arrowSlider_toright {
         width: 40px;
+        height: 40px;
         aspect-ratio: 1;
+    }
+
+    .reviews-section__btn {
+        height: 40px;
     }
 
     .radiant-skin-section {
@@ -1089,13 +1344,6 @@ footer section {
         padding-block: 30px;
     }
 
-    .btn-them,
-    .btnMoon,
-    .btnBag,
-    .btnProfile {
-        display: none;
-    }
-
     .hero-section {
         display: flex;
         align-items: center;
@@ -1128,6 +1376,10 @@ footer section {
 
     .reviews-section {
         padding: 40px 30px;
+    }
+
+    .reviews-section__viewport {
+        width: 100%;
     }
 
     .radiant-skin-section {
@@ -1164,12 +1416,21 @@ footer section {
         margin-bottom: 20px;
     }
 
-
+        .modalCard__imgContent {
+            width: 100%;
+            max-width: 130px;
+    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
 }
 
-@media(max-width: 600px) {
+@media(max-width: 640px) {
     :root {
         --container-width: 350px;
+        --header-height: 73px
     }
 
     body {
@@ -1246,12 +1507,12 @@ footer section {
     }
 
     .reviews-section__title {
-        margin-bottom: 24px;
+        margin-bottom: 10px;
     }
-    
-    .reviews-section__slide {
-        padding: 28px 15px;
+
+    .reviews-section__article {
         width: 320px;
+        padding: 28px 15px;
     }
 
     .reviews-section__slideIMG {
@@ -1260,6 +1521,12 @@ footer section {
 
     .reviews-section__slideSubtitle {
         margin-bottom: 10px;
+    }
+
+    .reviews-section__buttons {
+        position: static;
+        justify-content: center;
+        column-gap: 20px;
     }
 
     .radiant-skin-section {
@@ -1347,5 +1614,18 @@ footer section {
 
         border: 0.8px solid var(--color-cards);
         border-radius: 9px;
+    }
+
+    .catalog-grid.is-collapsed .card:nth-child(n+4) {
+        display: none;
+    }
+
+    .modalCard__content {
+        width: min(500px, 80vw);
+        max-height: 700px;
+    }
+
+    .modalCard__imgContent {
+        display: none;
     }
 }

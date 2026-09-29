@@ -41,24 +41,39 @@
             </nav>
         
             <div class="header__actions">
-                <button class="burger" title="Open menu" type="button">
-                    <svg class="burgert__img" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <button class="burger__btn" id="burger__btn" title="Open menu" aria-label="Open menu" type="button">
+                    <svg class="burger__img burger__icon--open" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path
                             d="M8.33337 16.6667H11.6667C15 16.6667 16.6667 15 16.6667 11.6667V8.33334C16.6667 5 15 3.33334 11.6667 3.33334H8.33337C5.00004 3.33334 3.33337 5 3.33337 8.33334V11.6667C3.33337 15 5.00004 16.6667 8.33337 16.6667Z"
-                            stroke="#121212" stroke-width="1.37086" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                            stroke="#121212" stroke-width="1.37086" stroke-miterlimit="10" stroke-linecap="round"
+                            stroke-linejoin="round" />
                         <path
                             d="M28.3334 16.6667H31.6667C35 16.6667 36.6667 15 36.6667 11.6667V8.33334C36.6667 5 35 3.33334 31.6667 3.33334H28.3334C25 3.33334 23.3334 5 23.3334 8.33334V11.6667C23.3334 15 25 16.6667 28.3334 16.6667Z"
-                            stroke="#121212" stroke-width="1.37086" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                            stroke="#121212" stroke-width="1.37086" stroke-miterlimit="10" stroke-linecap="round"
+                            stroke-linejoin="round" />
                         <path
                             d="M28.3334 36.6667H31.6667C35 36.6667 36.6667 35 36.6667 31.6667V28.3333C36.6667 25 35 23.3333 31.6667 23.3333H28.3334C25 23.3333 23.3334 25 23.3334 28.3333V31.6667C23.3334 35 25 36.6667 28.3334 36.6667Z"
-                            stroke="#121212" stroke-width="1.83597" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                            stroke="#121212" stroke-width="1.83597" stroke-miterlimit="10" stroke-linecap="round"
+                            stroke-linejoin="round" />
                         <path
                             d="M8.33337 36.6667H11.6667C15 36.6667 16.6667 35 16.6667 31.6667V28.3333C16.6667 25 15 23.3333 11.6667 23.3333H8.33337C5.00004 23.3333 3.33337 25 3.33337 28.3333V31.6667C3.33337 35 5.00004 36.6667 8.33337 36.6667Z"
-                            stroke="#292D32" stroke-width="1.83597" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                            stroke="#292D32" stroke-width="1.83597" stroke-miterlimit="10" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <svg class="burger__img burger__icon--close" width="40" height="40" viewBox="0 0 32 32"
+                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <title></title>
+                        <g id="cross">
+                            <line x1="7" x2="25" y1="7" y2="25" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" />
+                            <line x1="7" x2="25" y1="25" y2="7" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" />
+                        </g>
                     </svg>
                 </button>
         
-                <button class="btn-them" id="theme-toggle" title="Change theme" type="button" aria-pressed="false">
+                <button class="btn-them" id="theme-toggle" title="Change theme" type="button">
                     <img class="theme-toggle__icon--light" src="./icon/sun.svg" alt="light theme" loading="lazy" width="50"
                         height="50">
                     <img class="theme-toggle__icon--dark" src="./icon/moon.svg" alt="dark theme" loading="lazy" width="50"
@@ -108,8 +123,18 @@
                     <button class="category-btn" type="button" data-filter="body">For body</button>
                 </nav>
 
-                <div class="catalog-grid">
-                    <article class="card" data-category="body">
+                <template id="card-template">
+                    <article class="card">
+                        <img src="" alt="">
+                        <div class="card__description">
+                            <h4 class="card__subtitle"></h4>
+                            <p><span class="size-default"></span> / &dollar;<span class="price"></span></p>
+                        </div>
+                    </article>
+                </template>
+
+                <div class="catalog-grid" id="catalog">
+                    <!-- <article class="card" data-category="body">
                         <img src="./img/catalog/X5ExtremeBodyLotion.png" alt="Photo X5 Extreme Body Lotion" width="238" height="214">
                         <div class="card__description">
                             <h4 class="card__subtitle">X5 Extreme Body Lotion</h4>
@@ -174,10 +199,10 @@
                             <h4 class="card__subtitle">Extra-moisturizing coconut oil</h4>
                             <p>250 ml / <span class="price">&dollar;20.00</span></p>
                         </div>
-                    </article>
+                    </article> -->
                 </div>
             
-                <button class="moreCards-btn" type="button">Show More</button>
+                <button class="moreCards-btn" id="moreCards-btn" type="button">Show More</button>
             </section>
         </main>
     </div>
@@ -249,7 +274,78 @@
             </section>
         </div>
     </footer>
+    
+    <dialog class="burger-menu__dialog" id="burgerMenu">
+        <nav class="burger-menu__nav">
+            <ul class="burger-menu">
+                <li>
+                    <a href="#">Bag</a>
+                </li>
+                <li>
+                    <a href="#">Profile</a>
+                </li>
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+                <li>
+                    <a href="./catalog.html">Catalog</a>
+                </li>
+                <li>
+                    <a href="./index.html#about">About us</a>
+                </li>
+                <li>
+                    <a href="./index.html#reviews">Reviews</a>
+                </li>
+                <li>
+                    <a href="#contacts">Contacts</a>
+                </li>
+            </ul>
+        </nav>
+    </dialog>
 
-    <script src="./main.js" defer></script>
+    <template id="modalCard__template">
+        <div class="modalCard__content">
+            <div class="modalCard__imgContent">
+                <img class="modalCard__img" src="" alt="">
+            </div>
+
+            <div class="modalCard__info">
+                <div class="modalCard__block">
+                    <h3 class="modalCard__title"></h3>
+                    <p class="modalCard__description"></p>
+                </div>
+
+                <div class="modalCard__block">
+                    <h4 class="modalCard__subtitle">Size</h4>
+                    <div class="modalCard__choseSize">
+                        <button class="btnSize visually-hidden" type="button"></button>
+                    </div>
+                </div>
+
+                <div class="modalCard__block">
+                    <h4 class="modalCard__subtitle">Skin type</h4>
+                    <div class="modalCard__choseSkinType">
+                        <button class="btnSkinType visually-hidden" type="button"></button>
+                    </div>
+                </div>
+
+                <div class="modalCard__block">
+                    <h4 class="modalCard__subtitle">Presence of fragrance</h4>
+                    <div class="modalCard__choseSmell">
+                        <button class="btnSmell visually-hidden" type="button"></button>
+                    </div>
+                </div>
+
+                <p class="modalCard__totalPrice">
+                    <span>Total:</span> <span>&dollar;<span class="price"></span></span>
+                </p>
+
+                <button id="closeModalCardBtn" type="button">Close</button>
+            </div>
+        </div>
+    </template>
+    <dialog id="modalCard"></dialog>
+
+    <script type="module" src="./src/js/pages/catalog.js"></script>
 </body>
 </html>
