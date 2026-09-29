@@ -1,4 +1,5 @@
 import { initThemeToggle } from '../shared/theme.js';
+import { initBurgerMenu } from '../shared/burger-menu.js';
 import { catalogRenderer } from '../features/catalog/render.js';
 import { collapseController } from '../features/catalog/collapse.js';
 import { modalCard } from '../features/catalog/modal.js';
@@ -11,6 +12,7 @@ const dialog = document.getElementById('modalCard');
 
 async function initCatalog() {
     initThemeToggle();
+    initBurgerMenu();
 
     const collapse = collapseController(catalog, buttonMoreCards);
     const renderer = catalogRenderer(catalog, templateCard, collapse.showButtonMoreCards);

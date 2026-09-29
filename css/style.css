@@ -270,6 +270,7 @@ svg * {
 
     --container-width: 1280px;
     --container-padding-x: 5px;
+    --header-height: 108px;
 
     --transition-duration: 0.3s;
 }
@@ -557,12 +558,24 @@ dialog[open]::backdrop {
     display: block;
 }
 
-.burger {
+.burger__btn {
     display: none;
     height: 40px;
 }
 
-.burgert__img {
+.burger__img {
+    display: block;
+}
+
+.burger__icon--close {
+    display: none;
+}
+
+.burger__btn.is-active .burger__icon--open {
+    display: none;
+}
+
+.burger__btn.is-active .burger__icon--close {
     display: block;
 }
 
@@ -1059,6 +1072,41 @@ dialog[open]::backdrop {
     color: var(--color-text-btn);
 }
 
+.burger-menu__dialog {
+    position: fixed;
+    top: var(--header-height);
+    margin: 0;
+    padding: 60px 40px;
+    width: 100%;
+    z-index: 100;
+
+    max-width: none;
+    max-height: none;
+    border-radius: 0;
+    box-shadow: none;
+    overflow-y: auto;
+
+    transform: translateY(-16px);
+    transition: transform var(--transition-duration) ease-out;
+}
+
+.burger-menu__dialog[open] {
+    transform: translateY(0);
+}
+
+.burger-menu__nav {
+    width: var(--container-width);
+    margin-inline: auto;
+}
+
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+
+
 
 /* 6. Утилиты (Utilities) ← .visually-hidden, .text-center, .mt-2  */
 .visually-hidden {
@@ -1134,11 +1182,13 @@ dialog[open]::backdrop {
         margin-bottom: 70px;
     }
 
-    .header__nav {
+    .header__nav,
+    .btnBag,
+    .btnProfile {
         display: none;
     }
 
-    .burger {
+    .burger__btn {
         display: block;
     }
 
@@ -1269,11 +1319,6 @@ dialog[open]::backdrop {
         padding-block: 30px;
     }
 
-    .btnBag,
-    .btnProfile {
-        display: none;
-    }
-
     .hero-section {
         display: flex;
         align-items: center;
@@ -1360,6 +1405,7 @@ dialog[open]::backdrop {
 @media(max-width: 640px) {
     :root {
         --container-width: 350px;
+        --header-height: 73px
     }
 
     body {
