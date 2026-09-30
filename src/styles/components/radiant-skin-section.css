@@ -1,0 +1,138 @@
+.radiant-skin-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 50px;
+
+    background-color: var(--color-gray-bg);
+}
+
+.radiant-skin__info {
+    margin-block: 65px;
+    margin-left: 28px;
+}
+
+.radiant-skin__title {
+    margin-bottom: 60px;
+}
+
+.radiant-skin__subtitle {
+    margin-bottom: 10px;
+}
+
+.radiant-skin-section article {
+    margin-bottom: 60px;
+}
+
+.radiant-skin__goArticles {
+    display: inline-flex;
+    align-items: center;
+    padding: 11px 21px;
+    border-radius: 72px;
+    border: 1px solid var(--color-gray-btn);
+
+    background-color: var(--color-bg);
+    font-size: 32px;
+    line-height: 1.2em;
+}
+
+.radiant-skin__goArticles::after {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    aspect-ratio: 1;
+    margin-left: 5.5px;
+
+    background-color: currentColor;
+    -webkit-mask: url('/icon/arrow-right-light.svg') center / contain no-repeat;
+    mask: url('/icon/arrow-right-light.svg') center / contain no-repeat;
+}
+
+.radiant-skin__goArticles:hover {
+    background-color: var(--color-btn);
+    color: var(--color-text-btn);
+}
+
+.radiant-skin__img {
+    width: 550px;
+    height: auto;
+}
+
+@media (max-width: 1200px) {
+    .radiant-skin-section {
+        column-gap: 30px;
+    }
+
+    .radiant-skin__info {
+        margin-block: 50px;
+        margin-left: 25px;
+    }
+
+    .radiant-skin__title {
+        margin-bottom: 30px;
+    }
+
+    .radiant-skin-section article {
+        margin-bottom: 30px;
+    }
+
+    .radiant-skin__img {
+        width: 400px;
+    }
+}
+
+@media (max-width: 860px) {
+    .radiant-skin-section {
+        flex-direction: column;
+        row-gap: 28px;
+        padding: 40px 30px;
+    }
+
+    .radiant-skin__info {
+        margin: 0;
+    }
+
+    .radiant-skin__title {
+        margin-bottom: 34px;
+    }
+
+    .radiant-skin-section article {
+        margin-bottom: 34px;
+    }
+
+    .radiant-skin__img {
+        width: 340px;
+    }
+}
+
+@media (max-width: 640px) {
+    .radiant-skin-section {
+        padding: 30px 9px;
+    }
+
+    .radiant-skin__title {
+        font-size: 27px;
+    }
+
+    .radiant-skin__subtitle {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .radiant-skin__goArticles {
+        padding: 6px 12px;
+        font-size: 18px;
+    }
+
+    .radiant-skin__goArticles::after {
+        margin-left: 4px;
+    }
+
+    .radiant-skin__goArticles::after {
+        width: 20px;
+        aspect-ratio: 1;
+        margin-left: 4px;
+
+        background-image: url('/icon/arrow-right-light-smoll.svg');
+    }
+}

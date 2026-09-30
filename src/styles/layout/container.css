@@ -1,0 +1,19 @@
+.container {
+    max-width: calc(var(--container-width) + 2 * var(--container-padding-x));
+    margin-inline: auto;
+    padding-inline: var(--container-padding-x);
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        margin-bottom: 70px;
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        margin-block: 30px;
+    }
+}

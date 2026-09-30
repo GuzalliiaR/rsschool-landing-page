@@ -1,0 +1,64 @@
+:root {
+    --color-bg: #FFFFFF;
+    --color-gray-bg: #F0F0F0;
+    --color-gray-btn: #CFCFCF;
+    --color-text-btn: #FFFFFF;
+    --color-text-dark: #000000;
+    --color-h1: #121212;
+    --color-btn: #121212;
+    --color-header-nav: #545454;
+    --color-header-nav-highlight: #2E2E2E;
+    --color-light-pink: #FFF6FD;
+    --color-gray: #EFEFEF;
+    --color-footer-bg: #121212;
+    --color-footer-text: #FFFFFF;
+    --color-cards: #E4E4E4;
+
+    --font-familly: 'DM Sans', sans-serif;
+    --font-familly-logo1: 'Playfair Display', sans-serif;
+    --font-familly-logo2: 'Montserrat', sans-serif;
+
+    --container-width: 1280px;
+    --container-padding-x: 5px;
+    --header-height: 108px;
+
+    --transition-duration: 0.3s;
+}
+
+/* Теманая тема */
+[data-theme="dark"] {
+    --color-bg: #2E323A;
+    --color-gray-bg: #3A3F49;
+    --color-gray-btn: #6B7382;
+    --color-text-btn: #24272E;
+    --color-text-dark: #EEF1F6;
+    --color-h1: #FFFFFF;
+    --color-btn: #EAF0F7;
+    --color-header-nav: #BFC7D3;
+    --color-header-nav-highlight: #FFFFFF;
+    --color-light-pink: #583B4E;
+    /* hero: выраженный розово-сливовый */
+    --color-gray: #484E5A;
+    --color-footer-bg: #33373F;
+    --color-footer-text: #EDF0F5;
+    --color-cards: #454B56;
+}
+
+@media (max-width: 1200px) {
+    :root {
+        --container-width: 900px;
+    }
+}
+
+@media (max-width: 860px) {
+    :root {
+        --container-width: 600px;
+    }
+}
+
+@media (max-width: 640px) {
+    :root {
+        --container-width: 350px;
+        --header-height: 73px;
+    }
+}

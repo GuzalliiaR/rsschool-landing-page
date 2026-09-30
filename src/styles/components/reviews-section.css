@@ -1,0 +1,142 @@
+.reviews-section {
+    padding: 50px 40px;
+    background-color: var(--color-gray-bg);
+}
+
+.reviews-section__title {
+    margin-bottom: 30px;
+}
+
+.reviews-section__viewport {
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+
+    width: 60%;
+}
+
+.reviews-section__slider {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    transition: transform var(--transition-duration) ease-in-out;
+}
+
+.reviews-section__slide {
+    width: 100%;
+    flex-shrink: 0;
+    /* запрет на уменьшение внутри flex-контейнера */
+}
+
+.reviews-section__article {
+    width: 500px;
+    margin: auto;
+    padding: 37px 20px;
+    border-radius: 19px;
+
+    background-color: var(--color-bg);
+}
+
+.reviews-section__slideIMG {
+    border-radius: 50%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.reviews-section__slideSubtitle {
+    margin-bottom: 14px;
+}
+
+.reviews-section__nameAutor {
+    font-weight: 500;
+}
+
+.reviews-section__buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.reviews-section__btn {
+    height: 50px;
+    padding: 0;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--color-gray-bg);
+}
+
+.reviews-section__btn:hover {
+    background-color: var(--color-btn);
+    color: var(--color-text-btn);
+}
+
+.reviews-section__arrowSlider_toright {
+    transform: rotate(180deg);
+}
+
+
+@media (max-width: 1200px) {
+    .reviews-section__viewport {
+        width: 70%;
+    }
+
+    .reviews-section__title {
+        margin-bottom: 20px;
+    }
+
+    .reviews-section__article {
+        width: 417px;
+    }
+
+    .reviews-section__arrowSlider_toleft,
+    .reviews-section__arrowSlider_toright {
+        width: 40px;
+        height: 40px;
+        aspect-ratio: 1;
+    }
+
+    .reviews-section__btn {
+        height: 40px;
+    }
+}
+
+@media (max-width: 860px) {
+    .reviews-section {
+        padding: 40px 30px;
+    }
+
+    .reviews-section__viewport {
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .reviews-section {
+        padding: 30px 15px;
+    }
+
+    .reviews-section__title {
+        margin-bottom: 10px;
+    }
+
+    .reviews-section__article {
+        width: 320px;
+        padding: 28px 15px;
+    }
+
+    .reviews-section__slideIMG {
+        margin-bottom: 10px;
+    }
+
+    .reviews-section__slideSubtitle {
+        margin-bottom: 10px;
+    }
+
+    .reviews-section__buttons {
+        position: static;
+        justify-content: center;
+        column-gap: 20px;
+    }
+}

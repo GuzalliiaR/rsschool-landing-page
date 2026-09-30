@@ -1,0 +1,28 @@
+/* 1. Сброс / нормализация стилей ← reset.css, normalize.css  */
+@import './base/reset.css';
+
+/* 2. Настройки (Settings) ← переменные, :root, шрифты через @font-face */
+@import './base/fonts.css';
+@import './base/variables.css';
+
+/* 3. База (Base) ← стили для голых тегов (body, h1, a, p)  */
+@import './base/base.css';
+
+/* 4. Layout ← крупные блоки: container, grid, header, footer  */
+@import './layout/container.css';
+@import './layout/header.css';
+@import './layout/footer.css';
+
+/* 5. Компоненты (Components) ← кнопки, карточки, формы, навигация  */
+@import './components/logo.css';
+@import './components/burger-menu.css';
+@import './components/hero-section.css';
+@import './components/advantages-section.css';
+@import './components/reviews-section.css';
+@import './components/radiant-skin-section.css';
+@import './components/catalog.css';
+@import './components/card.css';
+@import './components/modal-card.css';
+
+/* 6. Утилиты (Utilities) */
+@import './utilities/utilities.css';

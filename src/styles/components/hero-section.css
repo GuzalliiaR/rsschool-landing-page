@@ -1,0 +1,143 @@
+.hero-section {
+    position: relative;
+    height: 523px;
+    background-color: var(--color-light-pink);
+    border-radius: 20px;
+}
+
+.hero-section__info {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    max-width: 587px;
+    margin-left: 60px;
+}
+
+.hero-section__title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 13px;
+}
+
+.hero-section__title_line-top {
+    align-self: flex-start;
+}
+
+.hero-section__title_line-bottom {
+    align-self: flex-end;
+}
+
+.hero-section__text {
+    width: 100%;
+    margin-bottom: 40px;
+    font-size: 30px;
+    line-height: 1.2em;
+}
+
+.hero-section__goCatalog {
+    display: inline-flex;
+    align-items: center;
+    padding: 11px 21px;
+    border-radius: 72px;
+    border: 1px solid var(--color-btn);
+
+    background-color: var(--color-btn);
+    color: var(--color-text-btn);
+    font-size: 32px;
+    line-height: 1.2em;
+}
+
+.hero-section__goCatalog::after {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    aspect-ratio: 1;
+    margin-left: 5.5px;
+
+    /* mask — это CSS-свойство, которое использует изображение как «трафарет» для элемента. */
+    background-color: currentColor;
+    /*background-color: currentColor — заливает всю прямоугольную область псевдоэлемента текущим цветом (currentColor)*/
+    -webkit-mask: url('/icon/arrow-right.svg') center / contain no-repeat;
+    /* -webkit-mask: для Safari, старого Chrome/Edge и т.д.    mask: для Firefox и современных браузеров */
+    mask: url('/icon/arrow-right.svg') center / contain no-repeat;
+    /*mask: url(arrow-right.svg) ... — «вырезает» из этой заливки только форму стрелки.*/
+}
+
+.hero-section__goCatalog:hover {
+    background-color: var(--color-gray);
+    color: var(--color-btn);
+}
+
+.hero-section__logo,
+.hero-section__imgProduct {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-bottom-right-radius: 20px;
+}
+
+.hero-section__logo {
+    z-index: 0;
+}
+
+.hero-section__imgProduct {
+    z-index: 10;
+}
+
+
+@media (max-width: 1200px) {
+    .hero-section {
+        height: 490px;
+    }
+
+    .hero-section__text {
+        font-size: 20px;
+    }
+
+    .hero-section__imgProduct {
+        display: none;
+    }
+}
+
+@media (max-width: 860px) {
+    .hero-section {
+        display: flex;
+        align-items: center;
+        height: 444px;
+    }
+
+    .hero-section__info {
+        position: static;
+
+        max-width: 500px;
+        margin: auto;
+
+        transform: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-section__info {
+        max-width: 340px;
+    }
+
+    .hero-section__title {
+        margin-bottom: 15px;
+        align-items: center;
+    }
+
+    .hero-section__title_line-top {
+        align-self: auto;
+    }
+
+    .hero-section__title_line-bottom {
+        align-self: auto;
+    }
+
+    .hero-section__goCatalog {
+        width: 100%;
+        justify-content: center;
+    }
+}

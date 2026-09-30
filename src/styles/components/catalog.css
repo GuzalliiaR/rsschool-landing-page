@@ -1,0 +1,148 @@
+.catalog__title {
+    margin-bottom: 50px;
+}
+
+.categories {
+    display: flex;
+    justify-content: center;
+    column-gap: 25px;
+    margin-bottom: 36px;
+}
+
+.category-btn {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid var(--color-gray);
+
+    background-color: var(--color-gray);
+}
+
+.category-btn:hover {
+    background-color: var(--color-bg);
+}
+
+.active {
+    font-weight: 500;
+    border: 2px solid var(--color-header-nav-highlight);
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 413px);
+    gap: 17px;
+    justify-content: center;
+
+    font-size: 25px;
+    margin-bottom: 36px;
+}
+
+/* Если у .catalog-grid нет класса .is-collapsed, кнопку .moreCards-btn не отображать */
+.moreCards-btn {
+    display: none;
+}
+
+/*~ - это селектор последующего сиблинга (находит все элементы .moreCards-btn на том же уровне вложенности, что и .catalog-grid.is-collapsed и идущие после него в разметке; сво-ва применяются к .moreCards-btn)*/
+.catalog-grid.is-collapsed~.moreCards-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    padding: 10px 15px;
+    background-color: var(--color-bg);
+    transform: scale(1);
+    transition: transform var(--transition-duration) ease;
+}
+
+.moreCards-btn::after {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 22.5px;
+    margin-left: 5.5px;
+
+    background-color: currentColor;
+    -webkit-mask: url('/icon/arrow-ShowMore.svg') center / contain no-repeat;
+    mask: url('/icon/arrow-ShowMore.svg') center / contain no-repeat;
+
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity var(--transition-duration) ease, transform var(--transition-duration) ease;
+}
+
+.moreCards-btn:hover {
+    font-weight: 500;
+    transform: scale(1.1);
+}
+
+.moreCards-btn:hover::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.catalog-grid.is-collapsed .card:nth-child(n+7) {
+    display: none;
+}
+
+@media (max-width: 1320px) {
+    .catalog-grid {
+        grid-template-columns: repeat(2, 413px);
+        gap: 30px;
+    }
+
+    .catalog-grid.is-collapsed .card:nth-child(n+5) {
+        display: none;
+    }
+}
+
+@media (max-width: 1200px) {
+    .catalog__title {
+        margin-bottom: 30px;
+    }
+
+    .categories {
+        column-gap: 18px;
+        margin-bottom: 30px;
+    }
+
+    .catalog-grid {
+        gap: 24px;
+        margin-bottom: 20px;
+    }
+
+    .moreCards-btn {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 860px) {
+    .catalog-grid {
+        grid-template-columns: repeat(1, 413px);
+        gap: 20px;
+
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 640px) {
+    .catalog__title {
+        margin-bottom: 24px;
+    }
+
+    .categories {
+        column-gap: 10px;
+        margin-bottom: 16px;
+    }
+
+    .catalog-grid {
+        grid-template-columns: repeat(1, 348px);
+
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .catalog-grid.is-collapsed .card:nth-child(n+4) {
+        display: none;
+    }
+}
